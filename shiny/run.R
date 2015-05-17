@@ -9,7 +9,7 @@ require(shiny)
 dir()[file.info(dir())$isdir]
 
 ## Executando as aplicações
-runApp("hist2", display.mode = "auto")
+runApp("transform", display.mode = "auto")
 
 ##--------------------------------------------
 ## Obs.: Como o processamento é local deve-se
