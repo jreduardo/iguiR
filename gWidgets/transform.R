@@ -60,18 +60,15 @@ transformation <- function(...) {
 ## Criando a interface
 win <- gwindow("Transformação de Variáveis")
 
-gx <- ggroup(cont=win, horizontal=FALSE)
-glabel("Transformação em X", cont=gx)
-tx <- gtable(trans, cont=gx, height=100,
+tx <- gtable(trans, cont=win, height=100,
              handler = transformation)
+names(tx) <- "Tranformação em X"
 
-gy <- ggroup(cont=win, horizontal=FALSE)
-glabel("Transformação em Y", cont=gy)
-ty <- gtable(trans, cont=gy, height=100,
+ty <- gtable(trans, cont=win, height=100,
              handler = transformation)
+names(ty) <- "Tranformação em Y"
 
 reg <- gcheckbox("Ajuste Regressão Linear", cont=win,
-                 expand=TRUE,
                  handler = transformation)
 
 ##-----------------------------------------------------------------------------
