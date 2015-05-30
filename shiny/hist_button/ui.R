@@ -5,7 +5,7 @@ shinyUI(
         titlePanel("Histograma"),
         sidebarLayout(
             sidebarPanel(
-                actionButton("acao", "Nova cor!")
+                actionButton(inputId="acao", label="Nova cor!")
             ),
             mainPanel(
                 plotOutput("hist.reactive")
