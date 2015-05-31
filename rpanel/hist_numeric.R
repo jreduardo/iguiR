@@ -19,17 +19,17 @@ hist.reactive <- function(input){
 }
 
 panel <- rp.control(title="Histograma")
+rp.doublebutton(panel=panel, variable=mar,
+                title="Tamanho das margens:",
+                initval=5, range=c(3, 7), step=0.5,
+                action=hist.reactive)
 rp.doublebutton(panel=panel, variable=cexaxis,
-                title="Tamanho do texto dos eixos.",
+                title="Tamanho do texto dos eixos:",
                 initval=1, range=c(0.5, 2), step=0.1,
                 action=hist.reactive)
 rp.doublebutton(panel=panel, variable=line,
-                title="Distância dos rótulos dos eixos.",
+                title="Distância dos rótulos dos eixos:",
                 initval=3, range=c(1, 4), step=0.1,
-                action=hist.reactive)
-rp.doublebutton(panel=panel, variable=mar,
-                title="Tamanho do texto dos eixos.",
-                initval=5, range=c(3, 7), step=0.5,
                 action=hist.reactive)
 
 ## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

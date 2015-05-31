@@ -13,7 +13,7 @@ shinyUI(
                              choices=fml, selected="serif"),
                 radioButtons(inputId="fnt", 
                              label="Escolha a fonte:",
-                             choices=fnt, selected=3)
+                             choices=fnt, selected=1)
             ),
             mainPanel(
                 plotOutput("hist.reactive")

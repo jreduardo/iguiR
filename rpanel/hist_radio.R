@@ -21,6 +21,7 @@ choices <- c(Turquesa="#00CC99",
 
 panel <- rp.control(title="Histograma")
 rp.radiogroup(panel=panel, variable=col,
+              title="Escolha a cor para as barras:",
               vals=choices, labels=names(choices),
               action=hist.reactive)
 

@@ -18,6 +18,7 @@ hist.reactive <- function(input){
 
 panel <- rp.control(title="Histograma")
 rp.slider(panel=panel, variable=nclass,
+          title="Escolha o número de classes:",
           from=1, to=30, resolution=1, initval=10,
           action=hist.reactive)
 
