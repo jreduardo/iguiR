@@ -18,7 +18,9 @@
 ## AB para a prohxima etapa nweton-raphson: action buttons;
 ##
 ## @version
-## 2015-05-25 karina.rebuli
+## 2015-05-25 | karina.rebuli | initial commit
+## 2015-06-29 | karina.rebuli | x coordinate bug fixed, it was causing an arrow bug;
+##                              substitution shape::Arrows() by graphics::arrows() function;
 ##
 ##=============================================================================
 
@@ -26,9 +28,6 @@
 ## Animation
 ##
 require( animation )
-
-## Other
-require( shape )
 
 ##
 ## Newton-Raphson main function
@@ -57,7 +56,8 @@ newtonRaphson <- function( function.quote, ini, nIterations, diffLimit,  time.st
     ##
     main.plot <- curve( fx(x), from = -5, to = 5,  n = 1e3 )
     plot( main.plot, type = "l"
-       , xlim = c( floor( ini*(-1) ), floor( ini*2 ) ), ylim = c(-100,100)
+       , xlim = c( floor( abs( ini )*-2 ), floor( abs( ini )*2 ) )
+       , ylim = c(-100,100)
        , main = f, xlab = "x", ylab = "f(x)" )
     abline( h = 0, lty = 3 )
 
@@ -90,7 +90,8 @@ newtonRaphson <- function( function.quote, ini, nIterations, diffLimit,  time.st
 
         ## New plot for each step
         plot( main.plot, type = "l"
-           , xlim = c( floor( steps[i]*2 )*(-1) , floor( steps[i]*2 ) ), ylim = c(-100,100)
+           , xlim = c( floor( abs( steps[i] )*-2 ), floor( abs( steps[i] )*2 ) )
+           , ylim = c(-100,100)
            , main = f, xlab = "x", ylab = "f(x)" )
         abline( h = 0, lty = 3 )
 
@@ -98,17 +99,7 @@ newtonRaphson <- function( function.quote, ini, nIterations, diffLimit,  time.st
         points( x = steps, y = rep(0, length = length(steps) ), col = gray(0.5), cex = 0.5 )
 
         ## Arrow
-        x0.arrow <- if( x1 < steps[i] ){ x1 }else{ steps[i] }
-        x1.arrow <- if( x1 > steps[i] ){ x1 }else{ steps[i] }
-        print( x0.arrow )
-        print( x1.arrow )
-        Arrows( x0 = x0.arrow, x1 = x1.arrow
-             , y0 = 0, y1 = 0
-             , col = gray( 0 )
-             , lty = 1 ##, code = ifelse( (steps[i] > x1), 1, 2 )
-             , arr.type = "triangle" ##, arr.adj = 0.5
-             , arr.length = 0.1
-             , arr.width = 0.2 )
+        arrows( x0 = steps[i], x1 = x1, y0 = 0, y1 = 0, length = 0.1, col = 3, lwd = 2 )
 
         ## Animation control
         ani.pause()
@@ -127,7 +118,8 @@ newtonRaphson <- function( function.quote, ini, nIterations, diffLimit,  time.st
 
     ## Last estimation
     plot( main.plot, type = "l"
-       , xlim = c( floor( steps[i]*2 )*(-1) , floor( steps[i]*2 ) ), ylim = c(-100,100)
+       , xlim = c( floor( abs( steps[i] )*-2 ), floor( abs( steps[i] )*2 ) )
+       , ylim = c(-100,100)
        , main = f, xlab = "x", ylab = "f(x)" )
     abline( h = 0, lty = 3 )
     points( x = steps, y = rep(0, length = length(steps) ), col = gray(0.5), cex = 0.5 )
@@ -140,10 +132,17 @@ newtonRaphson <- function( function.quote, ini, nIterations, diffLimit,  time.st
 }
 
 f <- quote( x^5 + 4*x^4 -2*x^3 - 5*x - 100 )
+
+## Show in X
+newtonRaphson( function.quote = f, ini = -15, nIte = 1e2, diffLimit = 1e-3, time.step = 2 )
+
+## Save on file
+file <- "anipkg.newtonraphson.gif"
+if( file %in% list.files() ) file.remove( file )
 saveGIF( {
-    newtonRaphson( function.quote = f, ini = -15, nIte = 1e2, diffLimit = 1e-3, time.step = 0.2 )
+    newtonRaphson( function.quote = f, ini = -15, nIte = 1e2, diffLimit = 1e-3, time.step = 2 )
 },
-        movie.name = "anipkg.newtonraphson.gif",
+        movie.name = file,
         ani.width = 500,
         ani.height = 300
 )

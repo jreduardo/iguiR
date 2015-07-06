@@ -32,7 +32,7 @@ if( !require( geoR ) ){
 }
 if( !require( R.utils ) ){
     ## capitalize() / decapitalize()
-    install.packages( "R.utis", dep = T )
+    install.packages( "R.utils", dep = T )
     require( R.utils )
 }
 
