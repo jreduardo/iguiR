@@ -515,12 +515,12 @@ img {
 <tr class="odd">
 <td align="center">rp.var.get</td>
 <td align="center">Recupera um objeto de um ambiente rpanel, usualmente de um panel</td>
-<td align="center">A administração de objetos dentro de ambiente rpanel é usualmente feita por ‘detrás das cortinas’ mas isso pode ser ocasionalmente útil para recuperar um objeto não explicitamente</td>
+<td align="center">A administração de objetos dentro de ambiente rpanel é usualmente feita por “detrás das cortinas” mas isso pode ser ocasionalmente útil para recuperar um objeto não explicitamente</td>
 </tr>
 <tr class="even">
 <td align="center">rp.var.put</td>
 <td align="center">Coloca um objeto num ambiente rpanel, usualmente dentro de um panel</td>
-<td align="center">A administração de objetos dentro de um ambiente rpanel é usualmente feita por ‘detrás das cortinas’ mais isso pode ser ocasionalmente útil para colocar um objeto não explicitamente</td>
+<td align="center">A administração de objetos dentro de um ambiente rpanel é usualmente feita por “detrás das cortinas”&quot; mais isso pode ser ocasionalmente útil para colocar um objeto não explicitamente</td>
 </tr>
 <tr class="odd">
 <td align="center">rp.widget.dispose</td>
@@ -544,9 +544,604 @@ img {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">absolutePanel</td>
+<td align="center">Panel com posicionamento absoluto</td>
+<td align="center">Cria um panel cujo conteúdo é absolutamente posicionado</td>
+</tr>
+<tr class="even">
+<td align="center">actionButton</td>
+<td align="center">Botão/link de ação</td>
+<td align="center">Cria um botão ou link de ação cujo valor inicialmente é zero, e adiciona um cada vez que é pressionado</td>
+</tr>
+<tr class="odd">
+<td align="center">addResourcePath</td>
+<td align="center">Publicação de recursos</td>
+<td align="center">Adiciona um diretório de recursos estáticos para Shiny’s web server, com o prefixo do caminho dado. Inicialmente desenvolvido pra autores de pacotes para dar suporte a arquivos disponíveis em JavaScript/CSS para seus componentes</td>
+</tr>
+<tr class="even">
+<td align="center">bootstrapPage</td>
+<td align="center">Cria uma página Bootstrap</td>
+<td align="center">Cria uma página Shiny UI<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> que carrega o CSS e JavaScript para <a href="http://getbootstrap.com/">Bootstrap</a>, e não possui conteúdo no corpo da página (que não seja o que você fornece)</td>
+</tr>
+<tr class="odd">
+<td align="center">brushedPoints</td>
+<td align="center">Encontra linhas do conjunto de dados que são selecionadas por um brush (pincel)</td>
+<td align="center">Esta função retorna linhas de um conjunto de dados que estão sob um brush utilizado com a plotOutput</td>
+</tr>
+<tr class="even">
+<td align="center">brushOpts</td>
+<td align="center">Cria um objeto representando opções de brushing</td>
+<td align="center">Ela gera um objeto representando opções de brushing, que será passado no argumento brush da função imageOutput ou plotOutput</td>
+</tr>
+<tr class="odd">
+<td align="center">builder</td>
+<td align="center">Funções de construção de HTML</td>
+<td align="center">Simples funções para construção de documentos em HTML</td>
+</tr>
+<tr class="even">
+<td align="center">checkboxGroupInput</td>
+<td align="center">Controle de inserção de grupos de caixas de seleção</td>
+<td align="center">Cria um grupo de caixas de seleção que podem ser utilizadas para alternar múltiplas escolhas independentemente. O servidor irá receber o input como um vetor de carácteres dos valores selecionados</td>
+</tr>
+<tr class="odd">
+<td align="center">checkboxInput</td>
+<td align="center">Controle de inserção de caixas de seleção</td>
+<td align="center">Cria uma caixa de seleção que pode ser utilizada para especificar valores lógicos</td>
+</tr>
+<tr class="even">
+<td align="center">clickOpts</td>
+<td align="center">Cria um objeto representando opções de clique</td>
+<td align="center">Ela gera um objeto representando opções de clique, que pode ser passada no argumento click da função imageOutput ou plotOutput</td>
+</tr>
+<tr class="odd">
+<td align="center">column</td>
+<td align="center">Cria uma coluna dentro de uma definição UI</td>
+<td align="center">Cria uma coluna para uso dentro de uma fluidRow ou fixedRow</td>
+</tr>
+<tr class="even">
+<td align="center">conditionalPanel</td>
+<td align="center">Panel condicional</td>
+<td align="center">Cria um panel que é visível ou não, dependente do valor de uma expressão em JavaScript. A expressão em JavaScript é avaliada uma vez na inicialização e sempre que o Shiny detectar uma mudança relevante no input/output</td>
+</tr>
+<tr class="odd">
+<td align="center">createWebDependency</td>
+<td align="center">Cria uma web dependência</td>
+<td align="center">Garante que uma dependência baseada num arquivo HTML (do pacote htmltools) possa ser servida sobre servidores Shiny’s HTTP. Esta função trabalha utilizando addResourcePath para mapear o diretório da dependência HTML para uma URL</td>
+</tr>
+<tr class="even">
+<td align="center">dateInput</td>
+<td align="center">Cria a inserção de data</td>
+<td align="center">Cria uma entrada de texto que, quando clicada, mostra/retorna um calendário que o usuário pode clicar para selecionar datas</td>
+</tr>
+<tr class="odd">
+<td align="center">dateRangeInput</td>
+<td align="center">Cria uma inserção de intervalos de datas</td>
+<td align="center">Cria um par de entradas de texto que, quando clicado, mostra/retorna calendários que o usuário pode clicar para selecionar datas</td>
+</tr>
+<tr class="even">
+<td align="center">dblclickOpts</td>
+<td align="center">Cria um objeto representando opções de clique duplo</td>
+<td align="center">Ela gera um objeto representando opções de clique duplo, que pode ser passada no argumento dblclick da função imageOutput ou da função plotOutput</td>
+</tr>
+<tr class="odd">
+<td align="center">domains</td>
+<td align="center">Domínios reativos</td>
+<td align="center">Domínios reativos é um mecanismo para o estabelecimento de propriedade sobre primitivas reativas (como expressões reativas e observadores), mesmo se o conjunto de primitivas reativas são criadas dinamicamente. Isso é útil para gerenciamento de tempo de vida (isto é, destruindo observadores quando a sessão Shiny que criou isso é encerrada) e manipulação de erros</td>
+</tr>
+<tr class="even">
+<td align="center">downloadButton</td>
+<td align="center">Cria um botão ou link para download</td>
+<td align="center">Use esta função para criar um botão ou link de download; quando clicado, ele irá iniciar um download do navegador (browser). O nome do arquivo e seu conteúdo é especificado pelo correspondente downloadHandler definido na função de servidor</td>
+</tr>
+<tr class="odd">
+<td align="center">downloadHandler</td>
+<td align="center">Download de arquivos</td>
+<td align="center">Permite que o conteúdo de uma aplicação Shiny esteja disponível ao usuário como o download de um arquivo (por exemplo, fazendo o download do conjunto de dados visível em momento atual como um arquivo CSV). Tanto o nome do arquivo quando o seu conteúdo podem ser calculados dinamicamente no instante em que o usuário inicia o download. Atribuir o valor retornado para uma abertura no output na sua função de servidor, e utilizar na UI a função downloadButton ou a função downloadLink para tornar o download disponível</td>
+</tr>
+<tr class="even">
+<td align="center">exprToFunction</td>
+<td align="center">Converte uma expressão numa função</td>
+<td align="center">Ela é pra é ser chamada de outra função, porque ela tentará pegar uma expressão não citada de duas chamadas atrás</td>
+</tr>
+<tr class="odd">
+<td align="center">fileInput</td>
+<td align="center">Controle de carregamento de arquivos</td>
+<td align="center">Cria um controle de carregamento de arquivos que pode ser utilizado para carregar um os mais arquivos</td>
+</tr>
+<tr class="even">
+<td align="center">fixedPage</td>
+<td align="center">Cria uma página com um layout fixo</td>
+<td align="center">Funções para criar páginas com layouts fixos. Uma página com layout fixo consiste em linhas que por sua vez incluem colunas. Linhas existem pelo propósito de garantir que seus elementos apareçam na mesma linha (se o navegador está com uma largura adequada). Colunas existem pelo propósito de definir de quanto será o espaço horizontal dentro de um grande grid de 12 unidades que seus elementos devem ocupar. Páginas fixas tem um limite de largura de 940 pixels em um típico display, e 724 ou 1170 pixels em pequenos e grandes displays respectivamente</td>
+</tr>
+<tr class="odd">
+<td align="center">flowLayout</td>
+<td align="center">Layout de fluxo</td>
+<td align="center">Coloca para fora elementos em arranjos da esquerda pra direita e do topo para baixo. Os elementos numa dada linha serão alinhados no topo. Este layout não funcionará muito bem com elementos que possuem um percentual base de largura (por exemplo, plotOutput tem uma largura padrão de width = “100%”)</td>
+</tr>
+<tr class="even">
+<td align="center">fluidPage</td>
+<td align="center">Cria uma página com um layout fluido</td>
+<td align="center">Funções para criar páginas com layout fuidos. Uma página com layout fluido consiste em linhas que por sua vez incluem colunas. Linhas existem pelo propósito de garantir que seus elementos apareçam na mesma linha (se o navegador está com uma largura adequada). Colunas existem pelo propósito de definir de quanto será o espaço horizontal dentro de um grande grid de 12 unidades que seus elementos devem ocupar. Páginas fluidas dimensionam seus componentes em tempo real para preencher toda a largura disponível do navegador</td>
+</tr>
+<tr class="odd">
+<td align="center">headerPanel</td>
+<td align="center">Cria um panel de cabeçalho</td>
+<td align="center">Cria um panel de cabeçalho contendo o tema da aplicação</td>
+</tr>
+<tr class="even">
+<td align="center">helpText</td>
+<td align="center">Cria um elemento de ajuda de texto</td>
+<td align="center">Uma ajuda de texto pode ser adicionada numa forma de entrada para prover explicações adicionais ou um contexto adicional</td>
+</tr>
+<tr class="odd">
+<td align="center">hoverOpts</td>
+<td align="center">Cria um objeto representando opções flutuantes</td>
+<td align="center">Ela gera um objeto representando opções flutuantes, que pode ser passado no argumento hover da função imageOutput ou da função plotOutput</td>
+</tr>
+<tr class="even">
+<td align="center">HTML</td>
+<td align="center">Carácteres marcados como HTML</td>
+<td align="center">Marca o texto dado como HTML, o que significa que a função tag não saberá como executar HTML escapando disso</td>
+</tr>
+<tr class="odd">
+<td align="center">htmlOutput</td>
+<td align="center">Cria um elemento de saída HTML</td>
+<td align="center">Torna uma variável de saída reativa como HTML dentro de uma página de aplicação. O texto será incluído dentro de uma div tag HTML, e é presumido para conter o conteúdo HTML que não deveria escapar</td>
+</tr>
+<tr class="even">
+<td align="center">icon</td>
+<td align="center">Cria um ícone</td>
+<td align="center">Cria um ícone para ser utilizado dentro da página. ícones podem aparecer por conta própria, dentro de um botão, ou como um ícone para uma tabPanel dentro de um navbarPage</td>
+</tr>
+<tr class="odd">
+<td align="center">imageOutput</td>
+<td align="center">Cria um gráfico ou uma imagem como elemento de saída</td>
+<td align="center">Coloca uma renderPlot ou uma renderImage dentro de uma página de aplicação</td>
+</tr>
+<tr class="even">
+<td align="center">include</td>
+<td align="center">Incluir conteúdo de um arquivo</td>
+<td align="center">Carrega HTML, texto, ou Markdown renderizados de um arquivo e os transforma em HTML</td>
+</tr>
+<tr class="odd">
+<td align="center">inputPanel</td>
+<td align="center">Insere um panel</td>
+<td align="center">Um flowLayout com uma borda cinza e uma iluminação cinza de fundo, adequado para a “embalagem” de inputs</td>
+</tr>
+<tr class="even">
+<td align="center">installExprFunction</td>
+<td align="center">Instala uma expressão como uma função</td>
+<td align="center">Instala uma expressão num dado ambiente como uma função, e registra debugs tanto quantos forem os pontos de quebra definidos na função</td>
+</tr>
+<tr class="odd">
+<td align="center">invalidateLater</td>
+<td align="center">Invalidação agendada</td>
+<td align="center">Agenda o atual contexto reativo para ser inválidado num dado número de milissegundos</td>
+</tr>
+<tr class="even">
+<td align="center">is.reactivevalues</td>
+<td align="center">Verifica se um objeto é de valores reativos</td>
+<td align="center">Verifica se os seus argumentos são um objeto de valores reativos</td>
+</tr>
+<tr class="odd">
+<td align="center">isolate</td>
+<td align="center">Cria um não reativo escopo para uma expressão</td>
+<td align="center">Executa a dada expressão em um escopo onde valores reativos ou expressões podem ser lidas, mas eles não podem causar a reativa do escopo da chamada para ser re-avaliado quando modificado</td>
+</tr>
+<tr class="even">
+<td align="center">knitr_methods</td>
+<td align="center">Métodos knitr S3</td>
+<td align="center">Esses métodos S3 são necessários para auxiliar aplicações Shiny e chunks UI incorporados em documentos knitr/rmarkdown</td>
+</tr>
+<tr class="odd">
+<td align="center">knitr_print.html</td>
+<td align="center">Métodos knitr S3</td>
+<td align="center">Esses métodos S3 são necessários para permitir que tags HTML sejam impressas em documentos knitr/rmarkdown</td>
+</tr>
+<tr class="even">
+<td align="center">mainPanel</td>
+<td align="center">Cria um panel principal</td>
+<td align="center">Cria um panel principal contendo elementos de saída que por sua vez podem ser passados para sidebarLayout</td>
+</tr>
+<tr class="odd">
+<td align="center">makeReactiveBinding</td>
+<td align="center">Faz uma variável reativa</td>
+<td align="center">Transforma uma variável normal em uma variável reativa, isto é, uma que possui semântica reativa quando atribuída ou lida numa forma usual. A variável pode já existir; se for este o caso, seu valor será utilizado como valor inicial da variável reativa (ou NULL se a variável ainda não existe)</td>
+</tr>
+<tr class="even">
+<td align="center">markRenderFunction</td>
+<td align="center">Marca uma função como uma função renderizada</td>
+<td align="center">Pode ser chamada por implementadores de renderXXX funções em ordem para marcar seus valores retornados como funções Shiny renderizadas, e para fornecer uma sugestão ao Shiny sobre quais funções de interface do usuário são mais comumente usadas com este tipo de funções renderizadas. Isso pode ser utilizado em documentos R Markdown para criar ferramentas completas de saída fora de funções renderizadas</td>
+</tr>
+<tr class="odd">
+<td align="center">maskReactiveContext</td>
+<td align="center">Avalia uma expressão sem um contexto reativo</td>
+<td align="center">Bloqueia temporariamente o contexto reativo atual e avalia a expressão dada. Qualquer tentativa para acessar diretamente valores reativos ou expressões em expr darão os mesmos resultados que fazê-lo em níveis superiores (por padrão, um erro)</td>
+</tr>
+<tr class="even">
+<td align="center">navbarPage</td>
+<td align="center">Cria uma página com uma barra de navegação no nível superior</td>
+<td align="center">Cria uma página que contém uma barra de navegação no nível superior que pode ser usada para alternar o conjunto de elementos da tabPanel</td>
+</tr>
+<tr class="odd">
+<td align="center">navlistPanel</td>
+<td align="center">Cria uma lista para navegação em um panel</td>
+<td align="center">Cria uma lista para navegação em um panel que permite uma lista de links na esquerda que navegam para um conjunto de tabPanels dispostas na direita</td>
+</tr>
+<tr class="even">
+<td align="center">nearPoints</td>
+<td align="center">Encontra linhas de conjunto de dados que estão próximas a um clique/flutuação/clique duplo</td>
+<td align="center">Esta função retorna linhas de um conjunto de dados que estão proxímas por um clique, flutuação, ou um clique duplo, quando usadas com a função plotOutput. As linhas serão classificadas por suas distâncias ao evento com o mouse</td>
+</tr>
+<tr class="odd">
+<td align="center">numericInput</td>
+<td align="center">Cria um controle numérico de entrada</td>
+<td align="center">Cria um controle de entrada para a inserção de valores numéricos</td>
+</tr>
+<tr class="even">
+<td align="center">observe</td>
+<td align="center">Cria um observador reativo</td>
+<td align="center">Cria um observador de uma dada expressão</td>
+</tr>
+<tr class="odd">
+<td align="center">observeEvent</td>
+<td align="center">Manipulador de eventos</td>
+<td align="center">Responde a “eventos semelhantes” a entradas reativas, valores e expressões</td>
+</tr>
+<tr class="even">
+<td align="center">outputOptions</td>
+<td align="center">Define opções para a saída de um objeto</td>
+<td align="center">Estas são as opções disponíveis para a saída de um objeto: 1 - suspendWhenHidden. Quando TRUE (o padrão), a saída do objeto será suspensa (não executada) quando ele está ocultado na página da web. Quando FALSE, a saída do objeto não será suspensa quando ocultada, e se ela já estiver ocultada e suspensa, ela será imediatamente retomada. 2 - priority. O nível de prioridade da saída do objeto. Saídas enfileiradas com altos valores de prioridade serão executados antes daquelas com baixos valores</td>
+</tr>
+<tr class="odd">
+<td align="center">pageWithSidebar</td>
+<td align="center">Cria uma página com uma barra lateral</td>
+<td align="center">Cria uma UI Shiny que contém um cabeçalho com o título da aplicação, uma barra lateral para a entrada de controles, e uma área principal para saídas</td>
+</tr>
+<tr class="even">
+<td align="center">parseQueryString</td>
+<td align="center">Analisa uma palavra de consulta GET a partir de uma URL</td>
+<td align="center">Retorna uma lista nominada de pares de valores chave</td>
+</tr>
+<tr class="odd">
+<td align="center">passwordInput</td>
+<td align="center">Cria um controle de entrada de senhas</td>
+<td align="center">Cria um controle de senhas para a entrada de senhas</td>
+</tr>
+<tr class="even">
+<td align="center">plotPNG</td>
+<td align="center">Corre uma função gráfica e salva a sua saída como PNG</td>
+<td align="center">Esta função retorna o nome do arquivo PNG que é gerado. Em essência, ela chama a png(), então a func() e então a dev.off(). Logo a func deve ser uma função que gera um gráfico quando usada desta maneira</td>
+</tr>
+<tr class="odd">
+<td align="center">Progress</td>
+<td align="center">Reporta o progresso (API orientada a objeto)</td>
+<td align="center">Retorna o progresso para o usuário em operações de longa duração</td>
+</tr>
+<tr class="even">
+<td align="center">radioButtons</td>
+<td align="center">Cria “radio buttons”</td>
+<td align="center">Cria um série de “radio buttons” utilizados para selecionar um item a partir de uma lista</td>
+</tr>
+<tr class="odd">
+<td align="center">reactive</td>
+<td align="center">Cria uma expressão reativa</td>
+<td align="center">Armazena uma expressão normal para criar uma expressão reativa. Conceitualmente, uma expressão reativa é uma expressão cujo resultado irá mudar ao longo do tempo</td>
+</tr>
+<tr class="even">
+<td align="center">reactiveFileReader</td>
+<td align="center">Leitor de arquivos reativo</td>
+<td align="center">Dado a caminho de um arquivo e uma função de leitura, retorna uma fonte de dados reativos para o conteúdo do arquivo</td>
+</tr>
+<tr class="odd">
+<td align="center">reactivePlot</td>
+<td align="center">Saída gráfica (desaconselhável)</td>
+<td align="center">Veja a função <a href="#renderPlot"><code>renderPlot</code></a></td>
+</tr>
+<tr class="even">
+<td align="center">reactivePoll</td>
+<td align="center">Votação reativa</td>
+<td align="center">Utizada para criar uma fonte de dados reativos, que trabalha por uma votação periódica de fontes de dados não reativos</td>
+</tr>
+<tr class="odd">
+<td align="center">reactivePrint</td>
+<td align="center">Impressão de saídas (desaconselhável)</td>
+<td align="center">Veja a função <a href="#renderPrint"><code>renderPrint</code></a></td>
+</tr>
+<tr class="even">
+<td align="center">reactiveTable</td>
+<td align="center">Saída de tabelas (desaconselhável)</td>
+<td align="center">Veja a função <a href="#renderTable"><code>renderTable</code></a></td>
+</tr>
+<tr class="odd">
+<td align="center">reactiveText</td>
+<td align="center">Saída de texto (desaconselhável)</td>
+<td align="center">Veja a função <a href="#renderText"><code>renderText</code></a></td>
+</tr>
+<tr class="even">
+<td align="center">reactiveTimer</td>
+<td align="center">Cronômetro</td>
+<td align="center">Cria um cronômetro reativo com um dado intervalo. Um cronômetro reativo é como um valor reativo, com a excessão de que valores reativos são desencadeados quando eles são definidos, enquanto cronômetros reativos são desencadeados simplesmente pela passagem do tempo</td>
+</tr>
+<tr class="odd">
+<td align="center">reactiveUI</td>
+<td align="center">Saída de UI (desaconselhável)</td>
+<td align="center">Veja a função <a href="#renderUI"><code>renderUI</code></a></td>
+</tr>
+<tr class="even">
+<td align="center">reactiveValues</td>
+<td align="center">Cria um objeto para o armazenamento de valores reativos</td>
+<td align="center">Esta função retorna um objeto para armazenar valores reativos. Ela é similar a uma lista, mas com habilidades especiais para programação reativa. Quando você lê um valor dela, a função reativa chamada pega uma dependência reativa naquele valor, e quando você a escreve, ela notifica qualquer função reativa que depende daquele valor. Note que valores pegos do objeto reactiveValues são reativos, mas o objeto reactiveValues sozinho não é</td>
+</tr>
+<tr class="odd">
+<td align="center">reactiveValuesToList</td>
+<td align="center">Converte um objeto reactiveValues para uma lista</td>
+<td align="center">Esta função faz algo similar ao que a função as.list faz. A diferença é que o contexto da chamada pegará dependências em todo objeto do objeto reactiveValues. Para evitar pegar dependências em todo objeto, você pode “embrulhar” a chamada com a função isolate()</td>
+</tr>
+<tr class="even">
+<td align="center">registerInputHandler</td>
+<td align="center">Registra uma manipulação de entrada</td>
+<td align="center">Adiciona um manipulador de entrada para dados deste tipo. Quando chamada, o Shiny utilizará esta função para refinar o dado passado de volta para o cliente (depois de ser desserializado pela jsonlite) antes tornando isso disponível na variável de entrada do arquivo server.R</td>
+</tr>
+<tr class="odd">
+<td align="center">removeInputHandler</td>
+<td align="center">Cancela o registro de uma manipulação de entrada</td>
+<td align="center">Remove um manipulador de entrada. Em vez de usar o manipulador previamente especificado para dados deste tipo, a serialização jsonlite padrão será utilizada</td>
+</tr>
+<tr class="even">
+<td align="center">renderDataTable</td>
+<td align="center">Saída de tabela com a biblioteca em JavaScript, DataTables</td>
+<td align="center">Faz uma versão reativa da função dada que retorna um data frame (ou uma matriz), que será renderizada com a biblioteca DataTables. Paginação, busca, filtragem, e classificação podem ser feitas no R usando o Shiny como infraestrutura de servidor</td>
+</tr>
+<tr class="odd">
+<td align="center">renderImage</td>
+<td align="center">Saída de arquivo de imagem</td>
+<td align="center">Renderiza uma imagem reativa que é adequada para a atribuição em uma abertura de saída</td>
+</tr>
+<tr class="even">
+<td align="center">renderPlot<a name="renderPlot"></a></td>
+<td align="center">Saída de gráficos</td>
+<td align="center">Renderiza um gráfico reativo que é adequado para a atribuição em uma abertura de saída</td>
+</tr>
+<tr class="odd">
+<td align="center">renderPrint<a name="renderPrint"></a></td>
+<td align="center">Impressão de saídas</td>
+<td align="center">Faz uma versão reativa de uma dada função que captura qualquer saída de impressão, inclusive a impressão de resultados (a menos com invisible), dentro de uma string. A função resultante é adequada para a atribuição em uma abertura de saída</td>
+</tr>
+<tr class="even">
+<td align="center">renderTable<a name="renderTable"></a></td>
+<td align="center">Saída de tabelas</td>
+<td align="center">Cria uma tabela reativa que é adequada para a atribuição em uma abertura de saída</td>
+</tr>
+<tr class="odd">
+<td align="center">renderText<a name="renderText"></a></td>
+<td align="center">Saída de texto</td>
+<td align="center">Faz uma versão reativa de uma dada função que também usa a função cat para retornar seu resultado em vetor carácter de um único elemento</td>
+</tr>
+<tr class="even">
+<td align="center">renderUI<a name="renderUI"></a></td>
+<td align="center">Saída de UI</td>
+<td align="center">Recurso experimental. Faz uma versão reativa de uma função que gera HTML utilizando a biblioteca Shiny UI</td>
+</tr>
+<tr class="odd">
+<td align="center">repeatable</td>
+<td align="center">Faz um gerador repetível de números aleatórios</td>
+<td align="center">Dada uma função que gera dados aleatórios, retorna uma versão “embrulhada” da função que sempre usa a mesma semente (seed) quando chamada. A semente pode ser passada explicitamente se desejado; caso contrário, um número aleatório é usado</td>
+</tr>
+<tr class="even">
+<td align="center">runApp</td>
+<td align="center">Roda uma aplicação Shiny</td>
+<td align="center">Roda uma aplicação Shiny. Esta função normalmente não retorna; interrompa o R para parar a aplicação (usualmente pressionando Ctrl+C ou Esc)</td>
+</tr>
+<tr class="odd">
+<td align="center">runExample</td>
+<td align="center">Roda exemplos de aplicação Shiny</td>
+<td align="center">Lançamento de exemplos de aplicação Shiny, e opcionalmente, seu sistema de navegação web</td>
+</tr>
+<tr class="even">
+<td align="center">runUrl</td>
+<td align="center">Roda uma aplicação Shiny de uma URL</td>
+<td align="center">runUrl() faz o download e lança uma aplicação Shiny que é hospedada em uma URL carregável. A aplicação Shiny precisa ser salva em um arquivo .zip, .tar, ou .tar.gz. Os arquivos da aplicação Shiny devem estar contidos em um diretório raiz ou em um subdiretório. Por exemplo, os arquivos podem ser myapp/server.r e myapp/ui.r. As funções runGitHub() e runGist() são baseadas na runUrl(), usando URL’s do GitHub (<a href="https://github.com" class="uri">https://github.com</a>) e GitHub gists (<a href="https://gist.github.com" class="uri">https://gist.github.com</a>), respectivamente</td>
+</tr>
+<tr class="odd">
+<td align="center">selectInput</td>
+<td align="center">Cria um controle de entrada de listas de seleção</td>
+<td align="center">Cria uma lista de seleção que pode ser utilizada para escolher um único ou múltiplos itens de uma lista de valores</td>
+</tr>
+<tr class="even">
+<td align="center">serverInfo</td>
+<td align="center">Coleta informações sobre o ambiente do Shiny Server</td>
+<td align="center">Esta função retorna informações sobre o Shiny Server atual, como sua versão, e se é uma edição open source ou uma edição profissional. Se o app não é servido através do Shiny Server, a função apenas retorna list(shinyServer = FALSE)</td>
+</tr>
+<tr class="odd">
+<td align="center">session</td>
+<td align="center">Objeto da sessão</td>
+<td align="center">Funções do servidor Shiny podem opcionalmente incluir session como um parâmetro (por exemplo, function(input, output, session)). O objeto da sessão é um ambiente que pode ser utilizado para acessar informações e funcionalidades relativas a sessão</td>
+</tr>
+<tr class="even">
+<td align="center">shiny-options</td>
+<td align="center">Opções globais para Shiny</td>
+<td align="center">São um número de opções globais que afetam o comportamento do Shiny. Elas podem ser definidas com (por exemplo) options(shiny.trace = TRUE)</td>
+</tr>
+<tr class="odd">
+<td align="center">ShinyApp</td>
+<td align="center">Cria um objeto Shiny app</td>
+<td align="center">Estas funções cria objetos Shiny app a partir de qualquer explícita UI/par de servidor (shinyApp), ou passando o caminho de um diretório que contém uma Shiny app (shinyAppDir). Você geralmente pode não precisar utilizar estas funções para criar/rodar aplicações; que se destinam a fins de interoperabilidade, como as incorporações Shiny apps dentro de um documento knitr</td>
+</tr>
+<tr class="even">
+<td align="center">shinyServer</td>
+<td align="center">Define funcionalidades do servidor</td>
+<td align="center">Define a lógica do lado do servidor da aplicação Shiny. Isso geralmente involve a criação de funções que mapeiam a entrada de usuários para vários tipos de saída. Em versões anteriores do Shiny, isso é necessário para chamar a shinyServer() no arquivo server.R, mas isso não é mais necessário a partir do Shiny 0.10. Agora o arquivo server.R pode simplesmente retornar a apropriada função do servidor (como a última expressão no código) sem chamar a shinyServer()</td>
+</tr>
+<tr class="odd">
+<td align="center">shinyUI</td>
+<td align="center">Cria um manipulador da Shiny UI</td>
+<td align="center">Historicamente essa função é utilizada em arquivos ui.R para registrar uma interface de usuário com Shiny. Isso não é mais necessário a partir do Shiny 0.10; simplesmente assegurar que a última expressão a ser retornada da ui.R é uma interface do usuário. A função é mantida para compatibilidade com versões anteriores com outras aplicações. Ele retorna o valor que é passado para ela</td>
+</tr>
+<tr class="even">
+<td align="center">showReactLog</td>
+<td align="center">Visualização de log reativos</td>
+<td align="center">Fornece uma ferramenta baseada em um navegador interativo para visualização de dependências reativas e execução em sua aplicação</td>
+</tr>
+<tr class="odd">
+<td align="center">sidebarLayout</td>
+<td align="center">Layout de uma barra lateral e área principal</td>
+<td align="center">Cria um layout com uma barra lateral e área principal. A barra lateral é disposta com uma distinta cor de fundo e tipicamente contém controles de entrada. A área principal ocupa 2/3 da largura horizontal e tipicamente contém saídas</td>
+</tr>
+<tr class="even">
+<td align="center">sidebarPanel</td>
+<td align="center">Cria um panel com barra lateral</td>
+<td align="center">Cria um panel com barra lateral contendo controles de entrada que pode ser passado na função sidebarLayout</td>
+</tr>
+<tr class="odd">
+<td align="center">singleton</td>
+<td align="center">Inclui conteúdo apenas uma vez</td>
+<td align="center">Use singleton para “embrulhar” conteúdo (tag, texto, HTML, ou listas) que devem ser incluídas no documento gerado apenas uma vez, contudo podem aparecer no código da geração do documento mais de uma vez. Apenas a primeira aparição do conteúdo (na ordem do documento) será utilizada</td>
+</tr>
+<tr class="even">
+<td align="center">sliderInput</td>
+<td align="center">Ferramentas de entrada de deslizadores</td>
+<td align="center">Constrói uma ferramenta deslizadora para selecionar um valor numérico a partir de um range</td>
+</tr>
+<tr class="odd">
+<td align="center">splitLayout</td>
+<td align="center">Layout dividido</td>
+<td align="center">Coloca para fora elementos horizontalmente, dividindo o espaço horizontal disponível em partes iguais (por padrão)</td>
+</tr>
+<tr class="even">
+<td align="center">stopApp</td>
+<td align="center">Para de rodar o atual Shiny app</td>
+<td align="center">Para de rodar o atual Shiny app, retornando o controle para o “chamador” da função runApp</td>
+</tr>
+<tr class="odd">
+<td align="center">submitButton</td>
+<td align="center">Cria um botão de envio</td>
+<td align="center">Cria um botão de envio para um formulário de entrada. Formulários que incluem um botão de envio não precisam necessáriamente atualizar suas saídas quando entradas mudam, em vez disso eles esperão enquanto o usuário explicitamente clica no botão de envio</td>
+</tr>
+<tr class="even">
+<td align="center">tableOutput</td>
+<td align="center">Cria uma tabela como elemento de saída</td>
+<td align="center">Renderiza uma renderTable ou uma renderDataTable dentro de uma página de aplicação. renderTable usa uma tabela HTML padrão, enquanto renderDataTable usa uma biblioteca DataTables em JavaScript para criar uma tabela interativa com mais características</td>
+</tr>
+<tr class="odd">
+<td align="center">tabPanel</td>
+<td align="center">Cria uma aba/guia do panel</td>
+<td align="center">Cria uma aba do panel que pode ser incluída dentro de uma tabsetPanel</td>
+</tr>
+<tr class="even">
+<td align="center">tabsetPanel</td>
+<td align="center">Cria um conjunto de abas/guias do panel</td>
+<td align="center">Cria um conjunto de abas que contém elementos tabPanel. Conjuntos de abas são úteis para dividir saídas em múltiplas seções visíveis independentes</td>
+</tr>
+<tr class="odd">
+<td align="center">tag</td>
+<td align="center">Objeto tag HTML</td>
+<td align="center">tag() cria uma definição tag HTML. Note que todas as tags HTML5 válidas já são definidas no ambiente tags, então essas funções devem apenas ser usadas para gerar tags adicionais. tagAppenChild() e tagList() são para o suporte de autores de pacotes que queiram criar seus próprios conjuntos de tags; veja o conteúdo da bootstrap.R para exemplos</td>
+</tr>
+<tr class="even">
+<td align="center">textInput</td>
+<td align="center">Cria um controlador para entrada de texto</td>
+<td align="center">Cria um controlador de entrada para entrada de valores textuais não estruturados</td>
+</tr>
+<tr class="odd">
+<td align="center">textOutput</td>
+<td align="center">Cria um elemento de saída de texto</td>
+<td align="center">Renderiza uma variável de saída reativa como texto dentro de uma página de aplicação. O texto deve ser incluído dentro uma tag div HTML por padrão</td>
+</tr>
+<tr class="even">
+<td align="center">titlePanel</td>
+<td align="center">Cria um panel contendo o título da aplicação</td>
+<td align="center">Cria um panel contendo o título da aplicação</td>
+</tr>
+<tr class="odd">
+<td align="center">updateCheckboxGroupInput</td>
+<td align="center">Muda o valor de uma entrada de grupo de caixas de seleção no cliente</td>
+<td align="center">Muda o valor de uma entrada de grupo de caixas de seleção no cliente</td>
+</tr>
+<tr class="even">
+<td align="center">updateCheckboxInput</td>
+<td align="center">Muda o valor de uma entrada de caixas de seleção no cliente</td>
+<td align="center">Muda o valor de uma entrada de caixas de seleção no cliente</td>
+</tr>
+<tr class="odd">
+<td align="center">updateDateInput</td>
+<td align="center">Muda o valor de uma entrada de datas no cliente</td>
+<td align="center">Muda o valor de uma entrada de datas no cliente</td>
+</tr>
+<tr class="even">
+<td align="center">updateDateRangeInput</td>
+<td align="center">Muda os valores iniciais e finais de uma entrada de um range de datas no cliente</td>
+<td align="center">Muda os valores iniciais e finais de uma entrada de um range de datas no cliente</td>
+</tr>
+<tr class="odd">
+<td align="center">updateNumericInput</td>
+<td align="center">Muda o valor de uma entrada de números no cliente</td>
+<td align="center">Muda o valor de uma entrada de números no cliente</td>
+</tr>
+<tr class="even">
+<td align="center">updateRadioButtons</td>
+<td align="center">Muda o valor de uma radio input no cliente</td>
+<td align="center">Muda o valor de uma radio input no cliente</td>
+</tr>
+<tr class="odd">
+<td align="center">updateSelectInput</td>
+<td align="center">Muda o valor de uma entrada de seleção no cliente</td>
+<td align="center">Muda o valor de uma entrada de seleção no cliente</td>
+</tr>
+<tr class="even">
+<td align="center">updateSliderInput</td>
+<td align="center">Muda o valor de uma entrada de deslizadores no cliente</td>
+<td align="center">Muda o valor de uma entrada de deslizadores no cliente</td>
+</tr>
+<tr class="odd">
+<td align="center">updateTabsetPanel</td>
+<td align="center">Muda a aba/guia selecionada no cliente</td>
+<td align="center">Muda a aba selecionada no cliente</td>
+</tr>
+<tr class="even">
+<td align="center">updateTextInput</td>
+<td align="center">Muda o valor de uma entrada de texto no cliente</td>
+<td align="center">Muda o valor de uma entrada de texto no cliente</td>
+</tr>
+<tr class="odd">
+<td align="center">validate</td>
+<td align="center">Valida a entrada de valores e outras condições</td>
+<td align="center">Para uma função de renderização de saída (por exemplo, renderPlot()), você pode precisar checar se a entrada de certos valores está disponível e validar antes de renderizar a saída. validate fornece um mecanismo conveniente para tal finalidade</td>
+</tr>
+<tr class="even">
+<td align="center">validateCssUnit</td>
+<td align="center">Valida uma formatação CSS adequada de uma unidade</td>
+<td align="center">Verifica se um argumento é válido para uso como uma unidade CSS de extensão</td>
+</tr>
+<tr class="odd">
+<td align="center">verbatimTextOutput</td>
+<td align="center">Cria um elemento de saída de texto verbatim</td>
+<td align="center">Renderiza uma variável de saída reativa como texto verbatim dentro de uma página de aplicação. O texto será incluído dentro de uma tag pre HTML</td>
+</tr>
+<tr class="even">
+<td align="center">verticalLayout</td>
+<td align="center">DIspõem verticalmente elementos de UI</td>
+<td align="center">Cria um recipiente que incluí uma ou mais linhas de conteúdo (cada elemento passado para o recipiente aparecerá em sua própria linha na UI)</td>
+</tr>
+<tr class="odd">
+<td align="center">wellPanel</td>
+<td align="center">Cria um well panel</td>
+<td align="center">Cria um panel com uma leve borda de inserção e cor de fundo cinza. Equivalente a classe Bootstrap’s well CSS</td>
+</tr>
+<tr class="even">
+<td align="center">withMathJax</td>
+<td align="center">Carrega a biblioteca MathJax e expressões matemáticas formatadas</td>
+<td align="center">Esta função adiciona MathJax para a página e formata expressões matemáticas (se encontradas) no conteúdo… Ela precisa ser chamada apenas uma vez em um aplicatico a menos que o conteúdo seja renderizado depois que a página é carregada, por exemplo, via renderUI, neste caso nós temos que chamá-la explicitamente toda vez que forem escritas expressões matemáticas para a saída</td>
+</tr>
+<tr class="odd">
+<td align="center">withProgress</td>
+<td align="center">Relatório de progresso (API funcional)</td>
+<td align="center">Relatórios de progresso para o usuário durante operações de longa duração</td>
+</tr>
+<tr class="even">
+<td align="center">withTags</td>
+<td align="center">Avalia uma expressão utilizando tags</td>
+<td align="center">Esta função torna simples a escrita de códigos em HTML. Invês de precisar especificar tags cada vez que uma função tag é utilizada, como em tags$div() e tags$p(), o código dentro da withTags é avaliado com tags procuradas antes, então você pode simplesmente utilizar div() e p()</td>
 </tr>
 </tbody>
 </table>
@@ -555,6 +1150,7 @@ img {
 <hr />
 <ol>
 <li id="fn1"><p>Janela que abre no momento em que a página em que ela se encontra é aberta/acessada.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Interface para o usuário<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
 
