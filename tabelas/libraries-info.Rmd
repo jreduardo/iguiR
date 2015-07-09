@@ -96,7 +96,7 @@ Mantenedor: Yihui Xie ( xie\@yihui.name )
 # rgl
 **Visualização 3D utilizando OpenGL**
 
-Fornece funções médio e alto nível para gráficos interativos 3D, incluindo funções modeladas na base gráfica (plot3d(), etc.) bem como funções para a construção de representações de objetos geométricos (cube3d(), etc.). As saídas podem ser na tela utilizando OpenGL, ou para vários formatos de arquivos 3D padrão incluindo WebGL, PLY, OBJ, STL bem como os formatos de imagem 2D, incluindo PNG, Postscript, SVG, PGF.
+Fornece funções de médio e alto nível para gráficos interativos 3D, incluindo funções modeladas na base gráfica (plot3d(), etc.) bem como funções para a construção de representações de objetos geométricos (cube3d(), etc.). As saídas podem ser na tela utilizando OpenGL, ou para vários formatos de arquivos 3D padrão incluindo WebGL, PLY, OBJ, STL bem como os formatos de imagem 2D, incluindo PNG, Postscript, SVG, PGF.
 
 Versão: 0.95.1247
 
