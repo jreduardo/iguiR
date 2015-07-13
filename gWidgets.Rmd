@@ -28,7 +28,7 @@ options(width=70)
 
 ## Botão de ação (gbutton)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Button.gif)
+![](./gWidgets/hist_Button.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -57,7 +57,7 @@ gbutton(text="Nova cor!", container=w, handler=hist.reactive)
 
 ## Caixas de seleção múltipla (gcheckboxgroup)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Checkboxgroup.gif)
+![](./gWidgets/hist_Checkboxgroup.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -94,7 +94,7 @@ colors <- gcheckboxgroup(items=names(cols2),
 
 ## Caixa de seleção (gcheckbox)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Checkbox.gif)
+![](./gWidgets/hist_Checkbox.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -132,7 +132,7 @@ modal <- gcheckbox(text="Destacal a classe modal?",
 
 ## Botões de incremento (gspimbutton)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Numeric.gif)
+![](./gWidgets/hist_Numeric.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -179,7 +179,7 @@ svalue(line) <- 3
 
 ## Múltipla escolha (gradio)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Radio.gif)
+![](./gWidgets/hist_Radio.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -219,7 +219,7 @@ col <- gradio(items=names(choices),
 
 ## Caixas de seleção (gcombobox)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Select.gif)
+![](./gWidgets/hist_Select.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -268,7 +268,7 @@ nclass <- gcombobox(items=Nclass, selected=1, container=g,
 
 ## Deslizador (gslider)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Slider.gif)
+![](./gWidgets/hist_Slider.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -304,7 +304,7 @@ nclass <- gslider(from=1, to=30, by=1, value=10,
 
 ## Entrada de texto (gedit)
 
-![](/home/walmes/GitHub/iguiR/gWidgets/hist_Text.gif)
+![](./gWidgets/hist_Text.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 

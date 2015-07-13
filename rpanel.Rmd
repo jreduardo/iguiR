@@ -28,7 +28,7 @@ options(width=70)
 
 ## Botão de ação (rp.button)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_button.gif)
+![](./rpanel/hist_button.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -59,7 +59,7 @@ rp.button(panel=panel,
 
 ## Caixa de seleção múltipla (rp.checkbox)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_checkboxgroup.gif)
+![](./rpanel/hist_checkboxgroup.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -98,7 +98,7 @@ rp.checkbox(panel=panel, variable=colors,
 
 ## Caixa de seleção (rp.checkbox)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_checkbox.gif)
+![](./rpanel/hist_checkbox.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -139,7 +139,7 @@ rp.checkbox(panel=panel, variable=modal,
 
 ## Entrada numérica (rp.numeric)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_numeric.gif)
+![](./rpanel/hist_numeric.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -185,7 +185,7 @@ rp.doublebutton(panel=panel, variable=line,
 
 ## Múltipla escolha (rp.radiogroup)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_radio.gif)
+![](./rpanel/hist_radio.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -224,7 +224,7 @@ rp.radiogroup(panel=panel, variable=col,
 
 ## Caixas de seleção (rp.listbox e rp.radiogroup)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_select2.gif)
+![](./rpanel/hist_select2.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -267,7 +267,7 @@ rp.radiogroup(panel=panel, variable=fnt,
 
 ## Caixa de seleção (rp.listbox)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_select.gif)
+![](./rpanel/hist_select.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -322,7 +322,7 @@ rp.listbox(panel=panel, variable=nclass,
 
 ## Deslizador (rp.slider)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_slider.gif)
+![](./rpanel/hist_slider.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -358,7 +358,7 @@ rp.slider(panel=panel, variable=nclass,
 
 ## Entrada de texto (rp.textentry)
 
-![](/home/walmes/GitHub/iguiR/rpanel/hist_text.gif)
+![](./rpanel/hist_text.gif)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
