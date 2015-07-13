@@ -1,0 +1,25 @@
+---
+output:
+  bootstrap_document:
+    theme: Flatly
+    highlight: Solarized - Dark
+    theme.chooser: TRUE
+    highlight.chooser: TRUE
+---
+
+```{r setup, include=FALSE}
+
+library(knitr)
+library(knitrBootstrap)
+library(rmarkdown)
+
+opts_chunk$set(
+    comment=NA,
+    fig.width=8,
+    fig.height=8,
+    dev.args=list(family="Palatino"),
+    bootstrap.panel=TRUE)
+
+options(width=70)
+
+```

@@ -1,0 +1,395 @@
+---
+output:
+  bootstrap_document:
+    theme: Flatly
+    highlight: Solarized - Dark
+    theme.chooser: TRUE
+    highlight.chooser: TRUE
+---
+
+```{r setup, include=FALSE}
+
+library(knitr)
+library(knitrBootstrap)
+library(rmarkdown)
+
+opts_chunk$set(
+    comment=NA,
+    fig.width=8,
+    fig.height=8,
+    dev.args=list(family="Palatino"),
+    bootstrap.panel=TRUE)
+
+options(width=70)
+
+```
+
+# Exemplos introdutórios com rpanel
+
+## Botão de ação (rp.button)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_button.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Botão de ação (rp.button)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+
+hist.reactive <- function(input){
+    col <- sample(colors(), size=1)
+    plot(ht, main=NULL,
+         ylab="Frequência absoluta", xlab="Precipitação",
+         col=col, sub=col)
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.button(panel=panel, 
+          title="Nova cor!",
+          action=hist.reactive)
+
+
+
+```
+
+
+## Caixa de seleção múltipla (rp.checkbox)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_checkboxgroup.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Caixa de seleção múltipla (rp.checkbox)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+nc <- length(ht$counts)
+
+cols <- c(Vermelho="#F81D54", Amarelo="#FF9F1E",
+          Azul="#2791E1", Verde="#72F51D")
+cols2 <- c(cols, rev(cols))
+
+hist.reactive <- function(input){
+    seqcol <- colorRampPalette(cols2[input$colors])
+    plot(ht, col=seqcol(nc),
+         main=NULL,
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.checkbox(panel=panel, variable=colors,
+            title="Escolha as cores para interpolar:",
+            labels=names(cols2),
+            initval=c(TRUE, is.na(cols2)[-1]),
+            action=hist.reactive)
+
+
+
+```
+
+
+## Caixa de seleção (rp.checkbox)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_checkbox.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Caixa de seleção (rp.checkbox)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+col <- rep("#3366CC", length(ht$counts))
+
+hist.reactive <- function(input){
+    if(input$modal){
+        col[which.max(ht$counts)] <- "#142952"
+    }
+    plot(ht, col=col, main=NULL,
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+    if(input$rg){
+        rug(x)
+    }
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.checkbox(panel=panel, variable=rg,
+            title="Marcar sobre eixo com os valores?",
+            initval=FALSE,
+            action=hist.reactive)
+rp.checkbox(panel=panel, variable=modal,
+            title="Destacal a classe modal?",
+            initval=FALSE,
+            action=hist.reactive)
+
+
+```
+
+
+## Entrada numérica (rp.numeric)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_numeric.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Entrada numérica (rp.numeric)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+
+hist.reactive <- function(input){
+    m <- input$mar
+    par(mar=c(m, m, 1, 1))
+    plot(ht, col="#660066",
+         main=NULL, axes=FALSE, ann=FALSE,
+         xaxt="n", yaxt="n")
+    box(bty="L")
+    axis(side=1, cex.axis=input$cexaxis)
+    axis(side=2, cex.axis=input$cexaxis)
+    title(ylab="Frequência absoluta",
+          xlab="Precipitação",
+          line=input$line)
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.doublebutton(panel=panel, variable=mar,
+                title="Tamanho das margens:",
+                initval=5, range=c(3, 7), step=0.5,
+                action=hist.reactive)
+rp.doublebutton(panel=panel, variable=cexaxis,
+                title="Tamanho do texto dos eixos:",
+                initval=1, range=c(0.5, 2), step=0.1,
+                action=hist.reactive)
+rp.doublebutton(panel=panel, variable=line,
+                title="Distância dos rótulos dos eixos:",
+                initval=3, range=c(1, 4), step=0.1,
+                action=hist.reactive)
+
+
+```
+
+
+## Múltipla escolha (rp.radiogroup)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_radio.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Múltipla escolha (rp.radiogroup)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+
+hist.reactive <- function(input){
+    plot(ht,
+         col=input$col,
+         main=NULL,
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+    return(input)
+}
+
+choices <- c(Turquesa="#00CC99",
+             Azul="#0066FF",
+             Rosa="#FF3399",
+             Laranja="#FF6600",
+             Roxo="#660066",
+             "Verde limão"="#99FF33")
+
+panel <- rp.control(title="Histograma")
+rp.radiogroup(panel=panel, variable=col,
+              title="Escolha a cor para as barras:",
+              vals=choices, labels=names(choices),
+              action=hist.reactive)
+
+
+```
+
+
+## Caixas de seleção (rp.listbox e rp.radiogroup)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_select2.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Caixas de seleção (rp.listbox e rp.radiogroup)
+
+require(rpanel)
+
+fml <- names(X11Fonts())
+fnt <- c("plain"=1, "bold"=2, "italic"=3, "bold-italic"=4)
+
+x <- precip
+ht <- hist(x)
+
+hist.reactive <- function(input){
+    f <- as.integer(input$fnt)
+    plot(ht,
+         family=input$fml,
+         font=as.integer(input$fnt),
+         col="#FF9200",
+         main=NULL,
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+         return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.listbox(panel=panel, variable=fml,
+           title="Escolha o tipo de fonte:",
+           vals=fml, initval=fml[1],
+           action=hist.reactive)
+rp.radiogroup(panel=panel, variable=fnt,
+           title="Escolha o estilo de fonte:",
+           vals=fnt, initval=fnt[1],
+           labels=names(fnt),
+           action=hist.reactive)
+
+
+```
+
+
+## Caixa de seleção (rp.listbox)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_select.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Caixa de seleção (rp.listbox)
+
+require(rpanel)
+
+nclass <- c("Sturges", "Scott", "Freedman-Diaconis")
+obj <- c("precip","rivers","islands")
+
+hist.reactive <- function(input){
+    L <- switch(input$obj,
+                precip=list(x=precip,
+                    xlab="Precipitação anual média (polegadas)"),
+                rivers=list(x=rivers,
+                    xlab="Comprimento dos rios (milhas)"),
+                islands=list(x=islands,
+                    xlab="Área de ilhas (1000 milhas quadradas)"))
+    hist(L$x,
+         breaks=input$nclass,
+         col="#8F0047",
+         main=NULL,
+         ylab="Frequência absoluta",
+         xlab=L$xlab)
+    rug(L$x)
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.combo(panel=panel, variable=obj,
+         prompt="Escolha o conjunto de dados:",
+         vals=obj, initval=obj[1],
+         action=hist.reactive)
+rp.combo(panel=panel, variable=nclass,
+         prompt="Escolha a regra para número de classes:",
+         vals=nclass, initval=nclass[1],
+         action=hist.reactive)
+
+panel <- rp.control(title="Histograma")
+rp.listbox(panel=panel, variable=obj,
+           title="Escolha o conjunto de dados:",
+           vals=obj, initval=obj[1],
+           action=hist.reactive)
+rp.listbox(panel=panel, variable=nclass,
+           title="Escolha a regra para número de classes:",
+           vals=nclass, initval=nclass[1],
+           action=hist.reactive)
+
+
+```
+
+
+## Deslizador (rp.slider)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_slider.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Deslizador (rp.slider)
+
+require(rpanel)
+
+x <- precip
+
+## Extremos com amplitude estendida em 5%.
+a <- extendrange(x, f=0.05)
+
+hist.reactive <- function(input){
+    bks <- seq(a[1], a[2], length.out=input$nclass+1)
+    hist(x,
+         breaks=bks,
+         main=NULL,
+         col="#008A8A",
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.slider(panel=panel, variable=nclass,
+          title="Escolha o número de classes:",
+          from=1, to=30, resolution=1, initval=10,
+          action=hist.reactive)
+
+
+```
+
+
+## Entrada de texto (rp.textentry)
+
+![](/home/walmes/GitHub/iguiR/rpanel/hist_text.gif)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Entrada de texto (rp.textentry)
+
+require(rpanel)
+
+x <- precip
+ht <- hist(x)
+
+hist.reactive <- function(input){
+    plot(ht, col="#006666",
+         ylab="Frequência absoluta",
+         xlab="Precipitação",
+         main=input$main,
+         sub=input$sub)
+    return(input)
+}
+
+panel <- rp.control(title="Histograma")
+rp.textentry(panel=panel, variable=main,
+             labels="Texto para o título:",
+             initval="",
+             action=hist.reactive)
+rp.textentry(panel=panel, variable=sub,
+             labels="Texto para o subtítulo:",
+             initval="",
+             action=hist.reactive)
+
+
+
+```
+
+
