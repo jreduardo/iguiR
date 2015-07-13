@@ -28,5 +28,3 @@ rp.radiogroup(panel=panel, variable=fnt,
            vals=fnt, initval=fnt[1],
            labels=names(fnt),
            action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

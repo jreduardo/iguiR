@@ -21,5 +21,3 @@ rp.slider(panel=panel, variable=nclass,
           title="Escolha o número de classes:",
           from=1, to=30, resolution=1, initval=10,
           action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

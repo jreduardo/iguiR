@@ -23,6 +23,3 @@ rg <- gcheckbox(text="Marcar sobre eixo com os valores?",
                 checked=FALSE, container=w, handler=hist.reactive)
 modal <- gcheckbox(text="Destacal a classe modal?",
                    checked=FALSE, container=w, handler=hist.reactive)
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

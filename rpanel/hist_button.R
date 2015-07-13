@@ -4,7 +4,6 @@ x <- precip
 ht <- hist(x)
 
 hist.reactive <- function(input){
-    ## input$acao
     col <- sample(colors(), size=1)
     plot(ht, main=NULL,
          ylab="Frequência absoluta", xlab="Precipitação",
@@ -16,6 +15,4 @@ panel <- rp.control(title="Histograma")
 rp.button(panel=panel, 
           title="Nova cor!",
           action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)
 

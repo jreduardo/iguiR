@@ -34,6 +34,3 @@ obj <- gcombobox(items=Obj, selected=1, container=g,
 g <- gframe(text="Escolha a regra para número de classes:", container=w)
 nclass <- gcombobox(items=Nclass, selected=1, container=g,
                     handler=hist.reactive)
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

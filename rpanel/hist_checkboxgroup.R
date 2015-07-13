@@ -4,7 +4,8 @@ x <- precip
 ht <- hist(x)
 nc <- length(ht$counts)
 
-cols <- c(Vermelho="#F81D54", Amarelo="#FF9F1E", Azul="#2791E1", Verde="#72F51D")
+cols <- c(Vermelho="#F81D54", Amarelo="#FF9F1E",
+          Azul="#2791E1", Verde="#72F51D")
 cols2 <- c(cols, rev(cols))
 
 hist.reactive <- function(input){
@@ -22,6 +23,4 @@ rp.checkbox(panel=panel, variable=colors,
             labels=names(cols2),
             initval=c(TRUE, is.na(cols2)[-1]),
             action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)
 

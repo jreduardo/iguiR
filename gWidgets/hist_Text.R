@@ -24,6 +24,3 @@ sub <- gedit(text=NULL,
              initial.msg="Insira e pressione Enter",
              coerce.with="as.character",
              container=g, handler=hist.reactive)
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

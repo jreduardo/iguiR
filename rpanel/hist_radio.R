@@ -24,5 +24,3 @@ rp.radiogroup(panel=panel, variable=col,
               title="Escolha a cor para as barras:",
               vals=choices, labels=names(choices),
               action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

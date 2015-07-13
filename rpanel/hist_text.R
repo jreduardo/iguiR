@@ -14,15 +14,11 @@ hist.reactive <- function(input){
 
 panel <- rp.control(title="Histograma")
 rp.textentry(panel=panel, variable=main,
-             ## title="Texto para o título:",
              labels="Texto para o título:",
              initval="",
              action=hist.reactive)
 rp.textentry(panel=panel, variable=sub,
-             ## title="Texto para o subtítulo:",
              labels="Texto para o subtítulo:",
              initval="",
              action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)
 

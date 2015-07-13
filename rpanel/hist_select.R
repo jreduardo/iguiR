@@ -5,9 +5,12 @@ obj <- c("precip","rivers","islands")
 
 hist.reactive <- function(input){
     L <- switch(input$obj,
-                precip=list(x=precip, xlab="Precipitação anual média (polegadas)"),
-                rivers=list(x=rivers, xlab="Comprimento dos rios (milhas)"),
-                islands=list(x=islands, xlab="Área de ilhas (1000 milhas quadradas)"))
+                precip=list(x=precip,
+                    xlab="Precipitação anual média (polegadas)"),
+                rivers=list(x=rivers,
+                    xlab="Comprimento dos rios (milhas)"),
+                islands=list(x=islands,
+                    xlab="Área de ilhas (1000 milhas quadradas)"))
     hist(L$x,
          breaks=input$nclass,
          col="#8F0047",
@@ -37,5 +40,3 @@ rp.listbox(panel=panel, variable=nclass,
            title="Escolha a regra para número de classes:",
            vals=nclass, initval=nclass[1],
            action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

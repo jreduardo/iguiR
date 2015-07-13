@@ -12,20 +12,6 @@ choices <- c(Turquesa="#00CC99",
              Roxo="#660066",
              "Verde limão"="#99FF33")
 
-## hist.reactive <- function(...){
-##     plot(ht,
-##          col=svalue(col),
-##          main=NULL,
-##          ylab="Frequência absoluta",
-##          xlab="Precipitação")
-## }
-## 
-## w <- gwindow("Histograma")
-## g <- gframe(text="Escolha a cor para as barras:", container=w)
-## col <- gradio(items=choices,
-##               selected=1,
-##               container=g, handler=hist.reactive)
-
 hist.reactive <- function(...){
     plot(ht,
          col=choices[svalue(col)],
@@ -39,6 +25,3 @@ g <- gframe(text="Escolha a cor para as barras:", container=w)
 col <- gradio(items=names(choices),
               selected=1,
               container=g, handler=hist.reactive)
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

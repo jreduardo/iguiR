@@ -32,6 +32,3 @@ g <- gframe(text="Distância dos rótulos dos eixos:", container=w)
 line <- gspinbutton(from=1, to=4, by=0.1, value=3,
                     container=g, handler=hist.reactive)
 svalue(line) <- 3
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

@@ -21,5 +21,3 @@ w <- gwindow("Histograma")
 g <- gframe(text="Escolha o número de classes:", container=w)
 nclass <- gslider(from=1, to=30, by=1, value=10,
                   container=g, handler=hist.reactive)
-
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)

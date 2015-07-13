@@ -31,5 +31,3 @@ rp.doublebutton(panel=panel, variable=line,
                 title="Distância dos rótulos dos eixos:",
                 initval=3, range=c(1, 4), step=0.1,
                 action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

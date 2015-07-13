@@ -26,5 +26,3 @@ rp.checkbox(panel=panel, variable=modal,
             title="Destacal a classe modal?",
             initval=FALSE,
             action=hist.reactive)
-
-## grep(x=ls("package:rpanel"), pattern="^rp\\.", value=TRUE)

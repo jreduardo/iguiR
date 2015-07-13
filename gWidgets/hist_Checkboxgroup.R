@@ -22,6 +22,3 @@ g <- gframe(text="Escolha as cores para interpolar:", container=w)
 colors <- gcheckboxgroup(items=names(cols2),
                          checked=c(TRUE, is.na(cols2)[-1]),
                          container=g, handler=hist.reactive)
-
-## methods(class=class(col))
-## grep(x=ls("package:gWidgets"), pattern="^g", value=TRUE)
