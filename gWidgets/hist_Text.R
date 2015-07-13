@@ -1,3 +1,5 @@
+## Entrada de texto (gedit)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

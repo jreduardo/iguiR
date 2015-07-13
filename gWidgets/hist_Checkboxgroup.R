@@ -1,3 +1,5 @@
+## Caixas de seleção múltipla (gcheckboxgroup)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

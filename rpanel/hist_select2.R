@@ -1,3 +1,5 @@
+## Caixas de seleção (rp.listbox e rp.radiogroup)
+
 require(rpanel)
 
 fml <- names(X11Fonts())

@@ -1,3 +1,5 @@
+## Deslizador (rp.slider)
+
 require(rpanel)
 
 x <- precip

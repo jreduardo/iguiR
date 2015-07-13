@@ -1,3 +1,5 @@
+## Entrada numérica (rp.numeric)
+
 require(rpanel)
 
 x <- precip

@@ -1,3 +1,5 @@
+## Deslizador (gslider)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

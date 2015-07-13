@@ -1,3 +1,5 @@
+## Caixa de seleção (rp.listbox)
+
 require(rpanel)
 
 nclass <- c("Sturges", "Scott", "Freedman-Diaconis")

@@ -1,3 +1,5 @@
+## Múltipla escolha (rp.radiogroup)
+
 require(rpanel)
 
 x <- precip

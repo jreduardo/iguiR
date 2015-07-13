@@ -1,3 +1,5 @@
+## Botões de incremento (gspimbutton)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

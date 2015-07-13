@@ -1,3 +1,5 @@
+## Entrada de texto (rp.textentry)
+
 require(rpanel)
 
 x <- precip

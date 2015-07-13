@@ -1,3 +1,5 @@
+## Botão de ação (gbutton)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

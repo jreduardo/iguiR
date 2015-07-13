@@ -1,3 +1,5 @@
+## Caixa de seleção (rp.checkbox)
+
 require(rpanel)
 
 x <- precip

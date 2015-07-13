@@ -1,3 +1,5 @@
+## Caixas de seleção (gcombobox)
+
 require(gWidgets)
 require(gWidgetstcltk)
 options(guiToolkit="tcltk")

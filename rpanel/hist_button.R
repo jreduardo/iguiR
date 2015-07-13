@@ -1,3 +1,5 @@
+## Botão de ação (rp.button)
+
 require(rpanel)
 
 x <- precip
