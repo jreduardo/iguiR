@@ -1,6 +1,9 @@
 *.aux
 *.log
 *.out
+*.nav
+*.toc
+*.snm
 .Rhistory
 .Rproj.user
 plano.html
@@ -9,3 +12,4 @@ gWidgets.html
 file
 file.out
 *.Rout
+iguiRslides.pdf
