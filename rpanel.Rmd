@@ -1,6 +1,6 @@
 ---
 output:
-  bootstrap_document:
+  knitrBootstrap::bootstrap_document:
     theme: Flatly
     highlight: Solarized - Dark
     theme.chooser: TRUE
@@ -24,11 +24,20 @@ options(width=70)
 
 ```
 
-# Exemplos introdutórios com rpanel
+# rpanel
 
-## Botão de ação (rp.button)
+> Controles interativos simples para R utilizando a biblioteca tcltk    
+> (Adrian Bowman) 
 
-![](./rpanel/hist_button.gif)
+## Instalação
+[http://cran.r-project.org/web/packages/rpanel/](http://cran.r-project.org/web/packages/rpanel/)  
+
+```{r, eval=FALSE,  bootstrap.show.code=FALSE}
+install.packages("rpanel")
+require(rpanel)
+```
+
+### Botão de ação (rp.button)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -56,10 +65,9 @@ rp.button(panel=panel,
 
 ```
 
+![](./rpanel/hist_button.gif)
 
-## Caixa de seleção múltipla (rp.checkbox)
-
-![](./rpanel/hist_checkboxgroup.gif)
+### Caixa de seleção múltipla (rp.checkbox)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -95,10 +103,9 @@ rp.checkbox(panel=panel, variable=colors,
 
 ```
 
+![](./rpanel/hist_checkboxgroup.gif)
 
-## Caixa de seleção (rp.checkbox)
-
-![](./rpanel/hist_checkbox.gif)
+### Caixa de seleção (rp.checkbox)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -136,10 +143,9 @@ rp.checkbox(panel=panel, variable=modal,
 
 ```
 
+![](./rpanel/hist_checkbox.gif)
 
-## Entrada numérica (rp.numeric)
-
-![](./rpanel/hist_numeric.gif)
+### Entrada numérica (rp.numeric)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -182,10 +188,9 @@ rp.doublebutton(panel=panel, variable=line,
 
 ```
 
+![](./rpanel/hist_numeric.gif)
 
-## Múltipla escolha (rp.radiogroup)
-
-![](./rpanel/hist_radio.gif)
+### Múltipla escolha (rp.radiogroup)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -221,10 +226,9 @@ rp.radiogroup(panel=panel, variable=col,
 
 ```
 
+![](./rpanel/hist_radio.gif)
 
-## Caixas de seleção (rp.listbox e rp.radiogroup)
-
-![](./rpanel/hist_select2.gif)
+### Caixas de seleção (rp.listbox e rp.radiogroup)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -264,10 +268,9 @@ rp.radiogroup(panel=panel, variable=fnt,
 
 ```
 
+![](./rpanel/hist_select2.gif)
 
-## Caixa de seleção (rp.listbox)
-
-![](./rpanel/hist_select.gif)
+### Caixa de seleção (rp.listbox)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -319,10 +322,9 @@ rp.listbox(panel=panel, variable=nclass,
 
 ```
 
+![](./rpanel/hist_select.gif)
 
-## Deslizador (rp.slider)
-
-![](./rpanel/hist_slider.gif)
+### Deslizador (rp.slider)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -355,10 +357,9 @@ rp.slider(panel=panel, variable=nclass,
 
 ```
 
+![](./rpanel/hist_slider.gif)
 
-## Entrada de texto (rp.textentry)
-
-![](./rpanel/hist_text.gif)
+### Entrada de texto (rp.textentry)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -392,4 +393,5 @@ rp.textentry(panel=panel, variable=sub,
 
 ```
 
+![](./rpanel/hist_text.gif)
 

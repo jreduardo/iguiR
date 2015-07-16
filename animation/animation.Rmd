@@ -1,0 +1,248 @@
+---
+output:
+  knitrBootstrap::bootstrap_document:
+    title: "Animation"
+    theme: Flatly
+    highlight: Solarized - Dark
+    theme.chooser: TRUE
+    highlight.chooser: TRUE
+---
+
+```{r setup, include=FALSE}
+#setwd("home/eduardojr/Área de Trabalho/PagesIGUIR/animation")
+library(animation)
+library(knitr)
+library(knitrBootstrap)
+library(rmarkdown)
+opts_chunk$set(comment = NA,
+               bootstrap.panel = TRUE)
+```
+
+# Animation
+
+> Galeria de animações em estatística e utilitários para a criação de animações em R  
+> (Yihui Xie)
+
+## Instalação
+
+[http://cran.r-project.org/web/packages/animation](http://cran.r-project.org/web/packages/animation)  
+[https://github.com/yihui/animation](https://github.com/yihui/animation)
+
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+install.packages("animation")
+require(animation)
+```
+
+## Animações disponíveis
+
+* `bisection.method()`
+* `boot.iid()`
+* `boot.lowess()`
+* `brownian.motion()`
+* `BM.circle()`
+* `g.brownian.motion()`
+* `buffon.needle()`
+* `clt.ani()`
+* `conf.int()`
+* `cv.ani()`
+* `flip.coin()`
+* `grad.desc()`
+* `kmeans.ani()`
+* `knn.ani()`
+* `least.squares()`
+* `lln.ani()`
+* `MC.hitormiss()`
+* `MC.samplemean()`
+* `mwar.ani()`
+* `newton.method()`
+* `price.ani()`
+* `quincunx()`
+* `sample.cluster()`
+* `sample.simple()`
+* `sample.strat()`
+* `sample.system()`
+* `sample.ratio()`
+* `sim.qqnorm()`
+
+## Exemplos
+
+### Intervalos de Confiança
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(conf.int(),
+         interval = 0.1,
+         htmlfile = "confint.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="confint.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Lançamento de uma moeda
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(flip.coin(),
+         img.name = "flipcoin", imgdir = "flipcoin",
+         interval = 0.1,
+         htmlfile = "flipcoin.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="flipcoin.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Algoritmo de agrupamento K-Means
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(kmeans.ani(),
+         img.name = "kmeans", imgdir = "kmeans",
+         interval = 0.1,
+         htmlfile = "kmeans.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="kmeans.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Método de mínimos quadrados
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(least.squares(),
+         img.name = "leastsquares", imgdir = "leastsquares",
+         interval = 0.1,
+         htmlfile = "leastsquares.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="leastsquares.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Tábua de Galton (quincunx)
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(quincunx(),
+         img.name = "quincunx", imgdir = "quincunx",
+         interval = 0.1,
+         nmax = 200 + 15 -2,
+         htmlfile = "quincunx.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="quincunx.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Integração via _Sample Mean Monte Carlo_
+```{r, eval=TRUE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+## Demonstração do conceito de intervalos de confiança
+saveHTML(MC.samplemean(),
+         img.name = "mcsample", imgdir = "mcsample",
+         interval = 0.1,
+         htmlfile = "mcsample.html",
+         verbose = FALSE)
+```
+<center>
+<iframe src="mcsample.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+### Método de _Newton-Raphson_
+```{r, eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE, bootstrap.show.code=FALSE}
+f <- quote(sin(x)-x^2/16)        # expressão da função, queremos obter a raíz
+fx0 <- function(x){ eval(f) }    # função
+f1 <- D(f,"x")                   # expressão da derivada
+fx1 <- function(x){ eval(f1) }   # função
+
+i <- 1       # valor inicial para o passo
+dif <- 10    # valor inical para a diferença entre duas avaliações
+tol <- 10^-9 # diferência mínima entre duas avaliações (tolerância)
+dif <- 100   # número máximo de passos
+x <- -7      # valor inicial para a raiz
+
+while(i<100 & dif>tol){
+  x[i+1] <- x[i]-fx0(x[i])/fx1(x[i])
+  dif <- abs(x[i+1]-x[i])
+  i <- i+1
+}
+
+saveHTML({
+  for(j in 2:i){
+    curve(fx0, -10, 10, main=paste("passo ", j-1, ", (x = ",
+                                   round(x[j],2), ")", sep=""))
+    abline(h=0, lty=2)
+    arrows(x[j-1], fx0(x[j-1]), x[j], fx0(x[j]), length=0.1, col=3, lwd=2)
+    abline(v=x[j], h=fx0(x[j]), lty=3, col=2)
+  }
+  abline(v=x[i], h=fx0(x[i]), col=2, lwd=2)
+  text(0, -3, label="CONVERGIU!", cex=2)
+  ani.pause()
+}, img.name = "newton", imgdir = "newton",
+   interval = 0.1,
+   htmlfile = "newton.html",
+   verbose = FALSE)
+```
+
+<center>
+<iframe src="newton.html" width=100% height = 700 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+</center>
+
+
+### Tendência Espacial
+```{r, eval=FALSE, echo=TRUE, message=FALSE, bootstrap.show.code=FALSE}
+library(RColorBrewer)
+library(classInt)
+library(spdep)
+library(maptools)
+library(sp)
+
+load("pr.RData")
+load("dat.RData")
+
+saveHTML(
+  for (t in 1:17) {
+    if (t == 1) {
+      i = 1:399
+    }
+    if (t > 1)
+      (i = (1:399) + (t - 1) * 399)
+    x <- (predito[i]/dat$pop[i]) * 1e+05
+    obs <- (dat$value[i]/dat$pop[i]) * 1e+05
+    pal_raw <- c(brewer.pal(5, "Reds"))
+
+    par(mfrow = c(1, 2), mar = c(1, 1, 2, 0), mgp = c(2, 0.5, 0))
+
+    rkmeans7_BEL <- classIntervals(x, style = "fixed", fixedBreaks = c(0, 2, 10, 20, 40, Inf))
+    rkmeans7_obs <- classIntervals(obs, style = "fixed", fixedBreaks = c(0, 2, 10, 20, 40, Inf))
+
+    plot(pr, col = findColours(rkmeans7_obs, pal_raw), bg = "gray")
+    cols <- findColours(rkmeans7_obs, pal_raw)
+    brks = c(0, 2, 10, 20, 40, Inf)
+    table <- attr(cols, "table")
+    legtext <- paste(leglabs(brks, under = "Menor que", over = "Maior que",
+                             between = "a"), " (", table, ")", sep = "")
+    legend("bottomleft", fill = attr(cols, "palette"), legend = legtext,
+           cex = 0.75, xpd = TRUE, x.inter = 0.3, xjust = 0,
+           text.width = 1.2, yjust = 0, bty = "n", text.col = "black")
+    legend("top", bty = "n", legend = paste("Observado", "Ano de", 1996 + t))
+
+    plot(pr, col = findColours(rkmeans7_BEL, pal_raw), bg = "gray")
+    cols <- findColours(rkmeans7_BEL, pal_raw)
+    brks <- c(0, 2, 10, 20, 40, Inf)
+    table <- attr(cols, "table")
+    legtext <- paste(leglabs(brks, under = "Menor que", over = "Maior que",
+                             between = "a"), " (", table, ")", sep = "")
+    legend("bottomleft", fill = attr(cols, "palette"), legend = legtext,
+           cex = 0.75, xpd = TRUE, x.inter = 0.3, xjust = 0,
+           text.width = 1.2, yjust = 0, bty = "n", text.col = "black")
+    legend("top", bty = "n", legend = paste("Predito", "Ano de", 1996 + t))
+
+    ani.pause()
+  }, 
+  img.name = "geopr", imgdir = "geopr",
+         interval = 0.5,
+         htmlfile = "geopr.html",
+         verbose = FALSE)
+```
+
+
+## Referências
+1. [http://vis.supstat.com/](http://vis.supstat.com/categories.html#animation-ref)
+2. [http://www.jstatsoft.org/v53/i01/paper](http://www.jstatsoft.org/v53/i01/paper)

@@ -1,6 +1,6 @@
 ---
 output:
-  bootstrap_document:
+  knitrBootstrap::bootstrap_document: 
     theme: Flatly
     highlight: Solarized - Dark
     theme.chooser: TRUE
@@ -24,11 +24,25 @@ options(width=70)
 
 ```
 
-# Exemplos introdutórios com gWidgets
+# gWidgets
 
-## Botão de ação (gbutton)
+> Ferramentas para criação de GUIs interativas no R  
+> (John Verzani)  
 
-![](./gWidgets/hist_Button.gif)
+## Instalação
+
+[http://cran.r-project.org/web/packages/gWidgets/](http://cran.r-project.org/web/packages/gWidgets/)  
+[https://github.com/jverzani/gWidgets2](https://github.com/jverzani/gWidgets2)
+
+```{r, eval=FALSE,  bootstrap.show.code=FALSE}
+install.packages("gWidgets")
+require(gWidgets)
+options(guiToolkit = "tcltk")
+```
+
+## Exemplos
+
+### Botão de ação (gbutton)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -54,47 +68,9 @@ gbutton(text="Nova cor!", container=w, handler=hist.reactive)
 
 ```
 
+![](./gWidgets/hist_Button.gif)
 
-## Caixas de seleção múltipla (gcheckboxgroup)
-
-![](./gWidgets/hist_Checkboxgroup.gif)
-
-```{r, eval=FALSE, bootstrap.show.code=FALSE}
-
-## Caixas de seleção múltipla (gcheckboxgroup)
-
-require(gWidgets)
-require(gWidgetstcltk)
-options(guiToolkit="tcltk")
-
-x <- precip
-ht <- hist(x)
-nc <- length(ht$counts)
-
-cols <- c(Vermelho="#F81D54", Amarelo="#FF9F1E", Azul="#2791E1", Verde="#72F51D")
-cols2 <- c(cols, rev(cols))
-
-hist.reactive <- function(...){
-    seqcol <- colorRampPalette(cols2[svalue(colors)])
-    plot(ht, col=seqcol(nc),
-         main=NULL,
-         ylab="Frequência absoluta",
-         xlab="Precipitação")
-}
-
-w <- gwindow("Histograma")
-g <- gframe(text="Escolha as cores para interpolar:", container=w)
-colors <- gcheckboxgroup(items=names(cols2),
-                         checked=c(TRUE, is.na(cols2)[-1]),
-                         container=g, handler=hist.reactive)
-
-
-```
-
-
-## Caixa de seleção (gcheckbox)
-
-![](./gWidgets/hist_Checkbox.gif)
+### Caixa de seleção (gcheckbox)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -129,10 +105,45 @@ modal <- gcheckbox(text="Destacal a classe modal?",
 
 ```
 
+![](./gWidgets/hist_Checkbox.gif)
 
-## Botões de incremento (gspimbutton)
+### Caixas de seleção múltipla (gcheckboxgroup)
 
-![](./gWidgets/hist_Numeric.gif)
+```{r, eval=FALSE, bootstrap.show.code=FALSE}
+
+## Caixas de seleção múltipla (gcheckboxgroup)
+
+require(gWidgets)
+require(gWidgetstcltk)
+options(guiToolkit="tcltk")
+
+x <- precip
+ht <- hist(x)
+nc <- length(ht$counts)
+
+cols <- c(Vermelho="#F81D54", Amarelo="#FF9F1E", Azul="#2791E1", Verde="#72F51D")
+cols2 <- c(cols, rev(cols))
+
+hist.reactive <- function(...){
+    seqcol <- colorRampPalette(cols2[svalue(colors)])
+    plot(ht, col=seqcol(nc),
+         main=NULL,
+         ylab="Frequência absoluta",
+         xlab="Precipitação")
+}
+
+w <- gwindow("Histograma")
+g <- gframe(text="Escolha as cores para interpolar:", container=w)
+colors <- gcheckboxgroup(items=names(cols2),
+                         checked=c(TRUE, is.na(cols2)[-1]),
+                         container=g, handler=hist.reactive)
+
+
+```
+
+![](./gWidgets/hist_Checkboxgroup.gif)
+
+### Botões de incremento (gspimbutton)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -176,10 +187,9 @@ svalue(line) <- 3
 
 ```
 
+![](./gWidgets/hist_Numeric.gif)
 
-## Múltipla escolha (gradio)
-
-![](./gWidgets/hist_Radio.gif)
+### Múltipla escolha (gradio)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -216,10 +226,9 @@ col <- gradio(items=names(choices),
 
 ```
 
+![](./gWidgets/hist_Radio.gif)
 
-## Caixas de seleção (gcombobox)
-
-![](./gWidgets/hist_Select.gif)
+### Caixas de seleção (gcombobox)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -265,10 +274,9 @@ nclass <- gcombobox(items=Nclass, selected=1, container=g,
 
 ```
 
+![](./gWidgets/hist_Select.gif)
 
-## Deslizador (gslider)
-
-![](./gWidgets/hist_Slider.gif)
+### Deslizador (gslider)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -301,10 +309,9 @@ nclass <- gslider(from=1, to=30, by=1, value=10,
 
 ```
 
+![](./gWidgets/hist_Slider.gif)
 
-## Entrada de texto (gedit)
-
-![](./gWidgets/hist_Text.gif)
+### Entrada de texto (gedit)
 
 ```{r, eval=FALSE, bootstrap.show.code=FALSE}
 
@@ -340,4 +347,5 @@ sub <- gedit(text=NULL,
 
 ```
 
+![](./gWidgets/hist_Text.gif)
 
