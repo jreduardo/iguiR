@@ -1,0 +1,63 @@
+% \usetikzlibrary{trees}
+
+\tikzset{
+  level 1/.style={level distance=2.5cm, sibling distance=1.5cm},
+%   level 2/.style={level distance=3.5cm, sibling distance=2.2cm},
+  bag/.style={
+%     text width=8em,
+    minimum width=5em,
+    minimum height=2em,
+    inner sep=10pt,
+    text centered, anchor=west,
+    fill=gray!50, rounded corners},
+}
+
+% \begin{tikzpicture}[grow=right, ->, >=stealth']
+% \node[bag] (R) at (0,0) {R};
+% \node[bag, right=of R] (gW) {gWidgets};
+% \node[bag, right=of gW] (gWxxx) {gWidgetsXXX}
+%   child {
+%     node[bag] (n4) {rJava}
+%   }
+%   child {
+%     node[bag] (n3) {qtbase}
+%   }
+%   child {
+%     node[bag] (n2) {RGtk2}
+%   }
+%   child {
+%     node[bag] (n1) {tcltk}
+%   };
+% \node[bag, right=4cm of gWxxx] (sis) {sistema};
+% \draw (R) -- (gW);
+% \draw (gW) -- (gWxxx);
+% \path[draw] (n1) -- (sis);
+% \path[draw] (n2) -- (sis);
+% \path[draw] (n3) -- (sis);
+% \path[draw] (n4) -- (sis);
+% \end{tikzpicture}
+
+\begin{tikzpicture}[grow=right, ->, >=stealth']
+\node[bag] (R) at (0,0) {R};
+\node[bag, right=of R] (gW) {gWidgets}
+%   child {
+%     node[bag] (n4) {rJava}
+%   }
+%   child {
+%     node[bag] (n3) {qtbase}
+%   }
+  child {
+    node[bag] (n2) {gWidgetsRGtk2}
+  }
+  child {
+    node[bag] (n1) {gWidgetstcltk}
+  };
+% \node[bag, right=4cm of gWxxx] (sis) {sistema};
+% \draw (R) -- (gW);
+% \draw (gW) -- (gWxxx);
+% \path[draw] (n1) -- (sis);
+% \path[draw] (n2) -- (sis);
+% \path[draw] (n3) -- (sis);
+% \path[draw] (n4) -- (sis);
+\end{tikzpicture}
+
