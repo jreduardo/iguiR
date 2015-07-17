@@ -2,7 +2,7 @@
 
 %----------------------------------------------------------------------
 
-\subsection{Descrição}
+\subsection*{Descrição}
 
 \begin{frame}
 
@@ -11,7 +11,7 @@
 
   \vspace{\baselineskip}
 
-  Verzani, M., Lawrence, M. (2012). \emph{Programming Graphical User
+  Verzani, J., Lawrence, M. (2012). \emph{Programming Graphical User
     Interfaces in R}, CRC Press.
 
   \begin{itemize}
@@ -29,7 +29,7 @@
   \item Alguns pacotes baseados em toolkits suportadas:
     \begin{itemize}
     \item tcl/tk:
-      \href{http://cran.r-project.org/web/packages/gWidgetstcltk/index.html}{\texttt{gWidgetstcltk}}
+      \href{http://cran.r-project.org/web/packages/gWidgetstcltk/index.html}{\texttt{gWidgetstcltk}},
       \href{http://cran.r-project.org/web/packages/Rcmdr/index.html}{\texttt{Rcmdr}},
       \href{http://cran.r-project.org/web/packages/TeachingDemos/index.html}{\texttt{TeachingDemos}},
       \href{http://cran.r-project.org/web/packages/MetSizeR/index.html}{\texttt{MetSizeR}},
@@ -39,7 +39,7 @@
       \href{http://cran.r-project.org/web/packages/TestScorer/index.html}{\texttt{TestScorer}}
       e muitos outros.
     \item gtk:
-      \href{http://cran.r-project.org/web/packages/gWidgetsRGtk2/index.html}{\texttt{gWidgetsRGtk2}}
+      \href{http://cran.r-project.org/web/packages/gWidgetsRGtk2/index.html}{\texttt{gWidgetsRGtk2}},
       \href{http://cran.r-project.org/web/packages/playwith/index.html}{\texttt{playwith}},
       \href{http://cran.r-project.org/web/packages/MissingDataGUI/index.html}{\texttt{MissingDataGUI}},
       \href{http://cran.r-project.org/web/packages/GroupSeq/index.html}{\texttt{GroupSeq}},
@@ -55,24 +55,39 @@
 
 %----------------------------------------------------------------------
 
-\subsection{Como usar}
+\subsection*{Como usar}
 
 \begin{frame}
+\includegraphics[scale=1]{./tikz/hist_slider_gWidgets-1.pdf}
+\end{frame}
 
-  modelo característico.
-
+\begin{frame}
+\includegraphics[scale=1]{./tikz/hist_slider_gWidgets-2.pdf}
 \end{frame}
 
 %----------------------------------------------------------------------
 
-\subsection{Exemplos}
+\subsection*{Exemplos}
 
 \begin{frame}
+ Praticando:
+  
   \begin{enumerate}
-  \item \href{run:./tikz/code.Rnw}{code.Rnw}
-  \item \href{./tikz/code.Rnw}{code.Rnw}
-  \item \url{./tikz/code.Rnw}
-  \item links para executáveis e galeria.
+    \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    \href{run:./R/gWidgets/gWidgets.R}{R Script gWidgets}
+  \item 
+	\href{run:gWidgets.html}{Galeria gWidgets IGUIR}
   \end{enumerate}
+
+  Algumas aplicações com o gWidgets:
+  \begin{itemize}
+    \itemsep1pt\parskip0pt\parsep0pt
+  \item \href{http://cran.r-project.org/web/packages/gWidgets/vignettes/}{Galeria
+      do autor},
+  \item \href{https://github.com/jverzani/ProgGUIinR}{ProGUIinR Package},
+  \item \href{http://www.r-bloggers.com/?s=gWidgets}{Busca no R
+      Bloggers}
+  \end{itemize}
 \end{frame}
 
