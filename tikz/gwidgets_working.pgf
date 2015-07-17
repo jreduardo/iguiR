@@ -1,63 +1,58 @@
-% \usetikzlibrary{trees}
-
 \tikzset{
-  level 1/.style={level distance=2.5cm, sibling distance=1.5cm},
-%   level 2/.style={level distance=3.5cm, sibling distance=2.2cm},
+  level 1/.style={
+    level distance=2cm,
+    sibling distance=1.5cm},
   bag/.style={
-%     text width=8em,
     minimum width=5em,
-    minimum height=2em,
+    minimum height=3em,
     inner sep=10pt,
-    text centered, anchor=west,
+    text centered,
+    anchor=west,
     fill=gray!50, rounded corners},
 }
 
-% \begin{tikzpicture}[grow=right, ->, >=stealth']
-% \node[bag] (R) at (0,0) {R};
-% \node[bag, right=of R] (gW) {gWidgets};
-% \node[bag, right=of gW] (gWxxx) {gWidgetsXXX}
-%   child {
-%     node[bag] (n4) {rJava}
-%   }
-%   child {
-%     node[bag] (n3) {qtbase}
-%   }
-%   child {
-%     node[bag] (n2) {RGtk2}
-%   }
-%   child {
-%     node[bag] (n1) {tcltk}
-%   };
-% \node[bag, right=4cm of gWxxx] (sis) {sistema};
-% \draw (R) -- (gW);
-% \draw (gW) -- (gWxxx);
-% \path[draw] (n1) -- (sis);
-% \path[draw] (n2) -- (sis);
-% \path[draw] (n3) -- (sis);
-% \path[draw] (n4) -- (sis);
-% \end{tikzpicture}
-
 \begin{tikzpicture}[grow=right, ->, >=stealth']
-\node[bag] (R) at (0,0) {R};
-\node[bag, right=of R] (gW) {gWidgets}
-%   child {
-%     node[bag] (n4) {rJava}
-%   }
-%   child {
-%     node[bag] (n3) {qtbase}
-%   }
+\node[bag, fill=gray!20] (R) at (0,0) {\includegraphics[width=1cm]{/home/walmes/Dropbox/tikz/Rlogo.png}};
+\node[bag, right=of R] (gW) {gWidgets};
+\node[bag, right=of gW] (gWxxx) {gWidgetsXYZ}
   child {
-    node[bag] (n2) {gWidgetsRGtk2}
+    node[bag] (n4) {rJava}
   }
   child {
-    node[bag] (n1) {gWidgetstcltk}
+    node[bag] (n3) {qtbase}
+  }
+  child {
+    node[bag] (n2) {RGtk2}
+  }
+  child {
+    node[bag] (n1) {tcltk}
   };
-% \node[bag, right=4cm of gWxxx] (sis) {sistema};
-% \draw (R) -- (gW);
-% \draw (gW) -- (gWxxx);
-% \path[draw] (n1) -- (sis);
-% \path[draw] (n2) -- (sis);
-% \path[draw] (n3) -- (sis);
-% \path[draw] (n4) -- (sis);
+\node[bag, right=3.5cm of gWxxx, text width=2cm] (sis) {sistema\\ operacional};
+\draw (R) -- (gW);
+\draw (gW) -- (gWxxx);
+\path[draw] (n1) -- (sis);
+\path[draw] (n2) -- (sis);
+\path[draw] (n3) -- (sis);
+\path[draw] (n4) -- (sis);
+\end{tikzpicture}
+
+\begin{tikzpicture}[grow=right, ->, >=stealth']
+\node[bag, fill=gray!20] (R) at (0,0) {\includegraphics[width=1cm]{/home/walmes/Dropbox/tikz/Rlogo.png}};
+\node[bag, right=of R] (gW) {gWidgets}
+  child {
+    node[bag, text width=8em] (n2) {gWidgetsRGtk2}
+  }
+  child {
+    node[bag, text width=8em] (n1) {gWidgetstcltk}
+  };
+\node[bag, right=of n1] (o1) {tcltk};
+\node[bag, right=of n2] (o2) {RGtk2};
+\node[bag, right=8.5cm of gW, text width=2cm] (sis) {sistema\\ operacional};
+
+\draw (R) -- (gW);
+\path[draw] (n1) -- (o1);
+\path[draw] (n2) -- (o2);
+\path[draw] (o1) -- (sis);
+\path[draw] (o2) -- (sis);
 \end{tikzpicture}
 
