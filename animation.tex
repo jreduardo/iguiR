@@ -2,59 +2,90 @@
 
 %----------------------------------------------------------------------
 
-\subsection*{Descrição}
+\subsection{Descrição}
 
 \begin{frame}
+
+  \begin{quote}
+    To turn ideas in animations (as quick and faithfully as possible).
+  \end{quote}
 
   \texttt{animation} contém funções para produzir
   animações com o R. As animações podem ser produzidas em vários
   formatos: flash, gif, html, pdf e vídeos.
 
   \begin{itemize}
-    \itemsep1pt\parskip0pt\parsep0pt
-  \item Autores: Yihui Xie, Lijia Yu, Weicheng Zhu
-  \item Lançamento: 11-Nov-2007
-  \item Versão: 2.3
+  \item Autores: Yihui Xie, Lijia Yu, Weicheng Zhu.
+  \item Lançamento: 11-Nov-2007.
+  \item Versão: 2.3.
   \item URL:
     \url{http://cran.r-project.org/web/packages/animation/index.html},
     \url{http://yihui.name/animation/}
+  \item Third-party software: ImageMagik (gif, mpeg convert), SWF Tools
+    (\texttt{png2swf}, \texttt{jpeg2swf}, \texttt{pdf2swf})
   \end{itemize}
 
 \end{frame}
 
 %----------------------------------------------------------------------
 
-\subsection*{Como usar}
+\begin{frame}
+  \begin{itemize}
+  \item Na janela gráfica
+    \begin{itemize}
+    \item Mais natural;
+    \item Não requer software extra.
+    \end{itemize}
+  \item HTML
+    \begin{itemize}
+    \item Não requer software extra, apenas navegador;
+    \item Interface de um player de vídeo com botões de play, pause,
+      etc;
+    \item Não precisa ter o R, pode usar o Rweb.
+    \end{itemize}
+  \item GIF
+    \begin{itemize}
+    \item Requer \texttt{ImageMagick} ou \texttt{GraphicsMagick} para
+      converter sequência de imagens em gifs.
+    \end{itemize}
+  \item Video
+    \begin{itemize}
+    \item Requer \texttt{FFmpeg} para converter sequência de imagens em
+      vídeos.
+    \end{itemize}
+  \item Flash
+    \begin{itemize}
+    \item Requer \texttt{SWFTools} para criar animações em flash.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------
+
+\subsection{Como usar}
 
 \begin{frame}
 
-%----------------------------------------------------------------------
-%----------------------------------------------------------------------
 \input{./tikz/ex_anima1.tex}
-%----------------------------------------------------------------------
-%----------------------------------------------------------------------
 
 \end{frame}
 
 %----------------------------------------------------------------------
 
-\subsection*{Exemplos}
+\subsection{Exemplos}
 
 \begin{frame}
+
   Praticando:
-  
   \begin{enumerate}
-    \itemsep1pt\parskip0pt\parsep0pt
-  \item
-    \href{run:./R/animation/animation.R}{R Script animation}
-  \item 
-	\href{run:./animation/animation.html}{Galeria animation IGUIR}
+  \item \href{run:./R/animation/animation.R}{R Script animation}
+  \item \href{run:./animation/animation.html}{Galeria animation IGUIR}
   \end{enumerate}
 
   Algumas aplicações com o animation:
   \begin{itemize}
-    \itemsep1pt\parskip0pt\parsep0pt
-  \item \href{http://vis.supstat.com/categories.html\#animation-ref}{Galeria
+  \item
+    \href{http://vis.supstat.com/categories.html\#animation-ref}{Galeria
       do autor},
   \item \href{http://www.r-bloggers.com/?s=animation}{Busca no R
       Bloggers}
