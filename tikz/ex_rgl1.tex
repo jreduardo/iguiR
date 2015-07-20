@@ -14,8 +14,9 @@
 \hlkwd{text}\hlstd{(...)}
 \hlkwd{points}\hlstd{(...)}
 \hlkwd{lines}\hlstd{(...)}
+\hlkwd{segments}\hlstd{(...)}
 \hlkwd{mtext}\hlstd{(...)}
-\hlkwd{par}\hlstd{(} \hlkwc{mfrow} \hlstd{= ...)}
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow}\hlstd{= ...)}
 \hlstd{...}
 \end{alltt}
 \end{kframe}
@@ -24,7 +25,7 @@
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(rgl)}
+\hlkwd{require}\hlstd{(rgl)}
 
 \hlkwd{plot3d}\hlstd{(...)}
 \hlkwd{persp3d}\hlstd{(...)}
@@ -34,6 +35,7 @@
 \hlkwd{text3d}\hlstd{(...)}
 \hlkwd{points3d}\hlstd{(...)}
 \hlkwd{lines3d}\hlstd{(...)}
+\hlkwd{segments3d}\hlstd{(...)}
 \hlkwd{mtext3d}\hlstd{(...)}
 \hlkwd{mfrow3d}\hlstd{(...)}
 \hlstd{...}
@@ -47,11 +49,11 @@
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{snapshot3d}\hlstd{(}\hlkwc{filename} \hlstd{=} \hlstr{"fig3d"}\hlstd{)}
+\hlkwd{snapshot3d}\hlstd{(}\hlkwc{filename}\hlstd{=}\hlstr{"fig3d"}\hlstd{)}
 
 \hlkwd{rgl.postscript}\hlstd{(}\hlstr{"fig3d.pdf"}\hlstd{,}
                \hlstr{"pdf"}\hlstd{,}
-               \hlkwc{drawText} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+               \hlkwc{drawText}\hlstd{=}\hlnum{FALSE}\hlstd{)}
 
 \hlkwd{writeWebGL}\hlstd{(...)}
 \end{alltt}
