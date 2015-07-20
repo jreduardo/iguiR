@@ -4,6 +4,9 @@
 *.nav
 *.toc
 *.snm
+*~
+.#*
+#*
 .Rhistory
 .Rproj.user
 plano.html
