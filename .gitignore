@@ -16,3 +16,5 @@ file
 file.out
 *.Rout
 iguiRslides.pdf
+animation/css/*
+animation/js/*
