@@ -6,18 +6,10 @@
 
 \begin{frame}
 
-  \begin{itemize}
-  \item Interface R para gráficos \textit{a la} Google Docs SpreadSheets, usa a
-    \emph{Google Charts API}.
-  \item O mais conhecido desses \textit{charts} é provavelmente o
-    \textbf{Motion Chart}, popularizado por Hans Rosling em seu
-    \href{??}{TED talk}. INCLUIR UM PRINTSCREEN E O LINK.
-  \item Visualizar dados em data frames com gráficos Google sem upload
-    no Google Docs.
-  \item O resultado é um html com funções JavaScript hopedadas pelo
-    Google que é rederizado pelo navegador.
-  \item Requer conexão, às vezes flash.
-  \end{itemize}
+  Interface R para gráficos \textit{a la}
+  \href{https://developers.google.com/chart/interactive/docs/gallery}{Google
+    Docs SpreadSheets}.
+  \vspace{2em}
 
   \begin{itemize}
   \item Autores: Markus Gesmann, Diego de Castillo, Joe Cheng
@@ -31,12 +23,38 @@
 \end{frame}
 
 \begin{frame}
+
+  \begin{columns}
+    \column{0.5\linewidth}
+    \begin{itemize}
+    \item O mais conhecido: \textbf{Motion Chart}, popularizado por Hans
+      Rosling em seu
+      \href{https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen}{TED
+        talk}.
+    \item Visualizar dados em data frames com gráficos Google sem upload
+      no Google Docs.
+    \item O resultado é um html com funções JavaScript hopedadas pelo
+      Google que é rederizado pelo navegador.
+    \item Requer conexão, às vezes flash.
+    \end{itemize}
+
+    \column{0.49\linewidth}
+    \includegraphics[width=\linewidth]{./images/ted-hans-hosling.png}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
   \begin{itemize}
   \item Dado estruturado em \texttt{DataTable}.
   \item Transforma \texttt{data.frame}s em objetos JSON.
   \item Usa o \texttt{RJSONIO} para gerar JSON.
-  \item Na versão 0.5.9: COLOCAR AQUI A LISTA... E UM PRINT SCREEN BEM CHAMATIVO.
   \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{./images/googleVis.jpg}
+  \end{center}
+
 \end{frame}
 
 %----------------------------------------------------------------------
@@ -71,7 +89,7 @@
   Algumas aplicações com o googleVis:
   \begin{itemize}
   \item \href{http://cran.r-project.org/web/packages/googleVis/vignettes/}{Galeria
-      do autor},
+      do autor}
   \item \href{http://www.r-bloggers.com/?s=googleVis}{Busca no R
       Bloggers}
   \end{itemize}
