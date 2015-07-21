@@ -20,7 +20,7 @@
 
 \newif\ifopacity
 % \opacitytrue  %% Descomente para texto transparente.
-%\opacityfalse %% Ou descomente para texto forte.
+% \opacityfalse %% Ou descomente para texto forte.
 
 \ifopacity
   \tikzset{
@@ -47,9 +47,9 @@
 
 \hlstd{graf} \hlkwb{<-} \hlkwd{\NANN{gv1}{gvisHistogram}}\hlstd{(\NANN{x3}{x},}
                       \hlkwc{\NANN{op1}{option}}\hlstd{=}\hlkwd{\NANN{op2}{list}}\hlstd{(}
-                         \hlkwc{\NANN{op3}{\phantom{1}}title}\hlstd{=}\hlstr{"PrecipitaÃ§Ã£o"}\hlstd{,}
-                          \hlkwc{vAxis}\hlstd{=}\hlstr{"\{title:'FrequÃªncia'\}"}\hlstd{,}
-                          \hlkwc{hAxis}\hlstd{=}\hlstr{"\{title:'PrecipitaÃ§Ã£o'\}"}\hlstd{,}
+                         \hlkwc{\NANN{op3}{\phantom{1}}title}\hlstd{=}\hlstr{"Precipita\c{c}\~ao"}\hlstd{,}
+                          \hlkwc{vAxis}\hlstd{=}\hlstr{"\{title:'Frequ\^encia'\}"}\hlstd{,}
+                          \hlkwc{hAxis}\hlstd{=}\hlstr{"\{title:'Precipita\c{c}\~ao'\}"}\hlstd{,}
                           \hlkwc{colors}\hlstd{=}\hlstr{"['red']"}\hlstd{,}
                           \hlkwc{legend}\hlstd{=}\hlstr{"none"}\hlstd{,}
                           \hlkwc{hAxis.gridlines.count}\hlstd{=}\hlnum{10}\hlstd{)) \hspace{4ex}\NANN{op4}{\phantom{1}}}
