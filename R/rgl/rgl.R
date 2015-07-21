@@ -8,6 +8,26 @@
 ## rgl
 library(rgl)
 
+## ## Diagrama de dispersão.
+## with(rock, plot(x=area, y=peri))           ## graphics
+## with(rock, plot3d(x=area, y=peri, z=perm)) ## rgl
+## 
+## fun <- function(x, y){
+##     sin(sqrt(x^2+y^2))/sqrt(x^2+y^2)
+## }
+## 
+## x <- y <- seq(-8, 8, by=0.25)
+## z <- outer(x, y, fun)
+## 
+## ## Superfície.
+## persp(x=x, y=y, z=z)   ## graphics
+## persp3d(x=x, y=y, z=z) ## rgl
+## 
+## ## Não fechar a janela do openGL.
+## snapshot3d("fig3d-1.png")
+## rgl.postscript(filename="fig3d.pdf", fmt="pdf")
+## writeWebGL() ## exporta para webGL.
+
 ##--------------------------------------------
 ## Exemplo 
 
