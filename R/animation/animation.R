@@ -6,7 +6,7 @@
 
 ##=============================================================================
 ## Animation
-library(animation)
+require(animation)
 
 ##--------------------------------------------
 ## Exemplo apresentação
@@ -34,21 +34,12 @@ saveGIF({
     for(i in 1:26){
         plot(x = i, y = 1, pch = LETTERS[i],
              xlim = c(1, 26), cex = 4)
-        ani.pause()
-    }}, interval = 0.1)
-
-saveHTML({
-    for(i in 1:26){
-        plot(x = i, y = 1, pch = LETTERS[i],
-             xlim = c(1, 26), cex = 4)
-        ani.pause()
     }}, interval = 0.1)
 
 saveVideo({
     for(i in 1:26){
         plot(x = i, y = 1, pch = LETTERS[i],
              xlim = c(1, 26), cex = 4)
-        ani.pause()
     }}, interval = 0.1)
 
 saveSWF({
@@ -62,5 +53,14 @@ saveLatex({
     for(i in 1:26){
         plot(x = i, y = 1, pch = LETTERS[i],
              xlim = c(1, 26), cex = 4)
-        ani.pause()
+    }}, interval = 0.1,
+          ani.width = 7, 
+          ani.height = 7,
+          ani.dev = "pdf",
+          ani.type = "pdf")
+
+saveHTML({
+    for(i in 1:26){
+        plot(x = i, y = 1, pch = LETTERS[i],
+             xlim = c(1, 26), cex = 4)
     }}, interval = 0.1)

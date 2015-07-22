@@ -55,11 +55,19 @@ rp.radiogroup(panel=panel, variable=color, vals=names(col),
 ##--------------------------------------------
 ## Exemplos avançados
 
-rp.cartoons()
-
+## Distribuições de probabilidade
+source("https://raw.githubusercontent.com/JrEduardo/EduRPkg/master/rp.binom.R")
 source("https://raw.githubusercontent.com/JrEduardo/EduRPkg/master/rp.norm.R")
+rp.binom()
 rp.norm()
 
+## Exemplos da biblioteca
+rp.ci()
+rp.tables()
+
+rp.cartoons()
+
+## Exemplo para modelos não lineares
 require(wzRfun)
 rp.nls(model=rate~Int+(Top-Int)*conc/(Half+conc),
             data=Puromycin,

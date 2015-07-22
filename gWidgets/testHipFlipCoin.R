@@ -175,81 +175,81 @@ visible(w) <- TRUE
 ## pontos em um quadrado unitário é aleatória contra a hipótese
 ## alternativa que ela é regular.
 
-layout(1)
-plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
-abline(v=c(0,1), h=c(0,1))
-
-points(x=runif(20), y=runif(20))
-
-## Clicar.
-w <- locator(n=20, type="p")
-dput(w)
-
-w <- 
-structure(list(x = c(0.165469039145907, 0.198061209964413, 0.374602135231317, 
-0.537562989323843, 0.605463345195729, 0.504970818505338, 0.208925266903914, 
--0.0653921708185055, 0.453366548042704, 0.51583487544484, 0.695091814946619, 
-0.724967971530249, 0.692375800711744, 0.692375800711744, 0.377318149466192, 
-0.217073309608541, 0.260529537366548, 0.36645409252669, 0.632623487544484, 
-0.771140213523132), y = c(0.767066192170818, 0.756202135231317, 
-0.742622064056939, 0.815954448398576, 0.862126690391459, 0.234727402135231, 
-0.185839145907473, 0.604105338078292, 0.449292526690391, 0.443860498220641, 
-0.517192882562277, 0.639413523131672, 0.351516014234875, 0.264603558718861, 
-0.370528113879004, 0.476452669039146, 0.650277580071174, 0.666573665480427, 
-0.742622064056939, 0.829534519572954)), .Names = c("x", "y"))
-
-## Gráfico das coordenadas observadas dos eventos.
-plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
-abline(v=c(0,1), h=c(0,1))
-points(w, col=2, pch=19)
-
-## Gráfico das coordenadas de um evento com distribuição espacial
-## independente.
-plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
-points(runif(20), runif(20))
-
-## A estatística considerada aqui será a distância mínima observada
-## entre os pontos.
-
-## Replicando sob H0.
-r <- replicate(5000,
-               {
-                   M <- cbind(x=runif(20), y=runif(20))
-                   D <- dist(M)
-                   min(D)
-               })
-
-## Distância mínima observada na amostra.
-dw <- min(dist(do.call(cbind, w)))
-
-plot(ecdf(r))
-abline(v=dw, h=0.95, lty=2, col=2)
-
-## Número de ocorrência um evidência contra H0 superior a da amostra.
-sum(r>dw)/length(r)
-
-##-----------------------------------------------------------------------------
-
-plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
-abline(v=c(0,1), h=c(0,1))
-
-## Clicar.
-w <- locator(n=20, type="p")
-
-## Replicando sob H0.
-r <- replicate(100,
-               {
-                   M <- cbind(x=runif(20), y=runif(20))
-                   D <- c(dist(M))
-                   D
-               })
-str(r)
-
-plot(x=NULL, y=NULL, xlim=range(r), ylim=c(0,1))
-apply(r, 2, function(x) lines(ecdf(x), pch=NA))
-
-dw <- c(dist(do.call(cbind, w)))
-
-lines(ecdf(dw), col=2, pch=NA, lwd=2)
+## layout(1)
+## plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
+## abline(v=c(0,1), h=c(0,1))
+## 
+## points(x=runif(20), y=runif(20))
+## 
+## ## Clicar.
+## w <- locator(n=20, type="p")
+## dput(w)
+## 
+## w <- 
+## structure(list(x = c(0.165469039145907, 0.198061209964413, 0.374602135231317, 
+## 0.537562989323843, 0.605463345195729, 0.504970818505338, 0.208925266903914, 
+## -0.0653921708185055, 0.453366548042704, 0.51583487544484, 0.695091814946619, 
+## 0.724967971530249, 0.692375800711744, 0.692375800711744, 0.377318149466192, 
+## 0.217073309608541, 0.260529537366548, 0.36645409252669, 0.632623487544484, 
+## 0.771140213523132), y = c(0.767066192170818, 0.756202135231317, 
+## 0.742622064056939, 0.815954448398576, 0.862126690391459, 0.234727402135231, 
+## 0.185839145907473, 0.604105338078292, 0.449292526690391, 0.443860498220641, 
+## 0.517192882562277, 0.639413523131672, 0.351516014234875, 0.264603558718861, 
+## 0.370528113879004, 0.476452669039146, 0.650277580071174, 0.666573665480427, 
+## 0.742622064056939, 0.829534519572954)), .Names = c("x", "y"))
+## 
+## ## Gráfico das coordenadas observadas dos eventos.
+## plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
+## abline(v=c(0,1), h=c(0,1))
+## points(w, col=2, pch=19)
+## 
+## ## Gráfico das coordenadas de um evento com distribuição espacial
+## ## independente.
+## plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
+## points(runif(20), runif(20))
+## 
+## ## A estatística considerada aqui será a distância mínima observada
+## ## entre os pontos.
+## 
+## ## Replicando sob H0.
+## r <- replicate(5000,
+##                {
+##                    M <- cbind(x=runif(20), y=runif(20))
+##                    D <- dist(M)
+##                    min(D)
+##                })
+## 
+## ## Distância mínima observada na amostra.
+## dw <- min(dist(do.call(cbind, w)))
+## 
+## plot(ecdf(r))
+## abline(v=dw, h=0.95, lty=2, col=2)
+## 
+## ## Número de ocorrência um evidência contra H0 superior a da amostra.
+## sum(r>dw)/length(r)
+## 
+## ##-----------------------------------------------------------------------------
+## 
+## plot(x=c(0,1), y=c(0,1), type="n", xlim=c(0,1), ylim=c(0,1), asp=1)
+## abline(v=c(0,1), h=c(0,1))
+## 
+## ## Clicar.
+## w <- locator(n=20, type="p")
+## 
+## ## Replicando sob H0.
+## r <- replicate(100,
+##                {
+##                    M <- cbind(x=runif(20), y=runif(20))
+##                    D <- c(dist(M))
+##                    D
+##                })
+## str(r)
+## 
+## plot(x=NULL, y=NULL, xlim=range(r), ylim=c(0,1))
+## apply(r, 2, function(x) lines(ecdf(x), pch=NA))
+## 
+## dw <- c(dist(do.call(cbind, w)))
+## 
+## lines(ecdf(dw), col=2, pch=NA, lwd=2)
 
 ##-----------------------------------------------------------------------------
