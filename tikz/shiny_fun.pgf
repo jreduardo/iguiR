@@ -39,7 +39,8 @@ radioButtons\\
 selectInput\\
 sliderInput\\
 submitButton\\
-textInput
+textInput\\
+\ldots
 \end{minipage}
 }; 
 \node[title] at (inputs.north) {inputs};
@@ -94,5 +95,32 @@ isolate
 }; 
 \node[title] at (reacao.north) {rea\c{c}\~ao};
 
+\node[box, anchor=north] (layout) at (8.1,-3.9) {
+\begin{minipage}{3cm}
+\tt sidebarLayout\\
+splitLayout\\
+verticalLayout\\
+{flowLayout}
+\end{minipage}
+}; 
+\node[title] at (layout.north) {disposi\c{c}\~ao};
+
+\node[box, anchor=north] (painel) at (12,0) {
+\begin{minipage}{3cm}
+\tt sidebarPanel\\
+mainPanel\\
+absolutePanel\\
+headerPanel\\
+fixedPanel\\
+titlePanel\\
+tabPanel\\
+tabsetPanel\\
+wellPanel\\
+navlistPanel\\
+conditionalPanel\\
+\ldots
+\end{minipage}
+}; 
+\node[title] at (painel.north) {containers};
 
 \end{tikzpicture}
