@@ -180,7 +180,8 @@
 %% Spacing between items (itemize)
 \let\olditem\item
 \renewcommand{\item}{%
-\olditem\vspace{6pt}}
+  \olditem\vspace{6pt}}
+
 %%-----------------------------------------------------------------------------
 %% Definições dos proprietários.
 
@@ -199,12 +200,13 @@
   Departamento de Estatística \\
   Universidade Federal do Paraná}
 \date{}
-% \logo{\includegraphics[width=1.4cm]{./images/ufpr_logo.jpg}}
+\logo{\includegraphics[width=1.4cm]{./images/ufpr_logo.jpg}}
 
 %%=============================================================================
 
 \begin{document}
 
+%\begin{comment}
 \frame{
   \vspace{-1.0cm}
   \titlepage
@@ -219,19 +221,34 @@
 
 \begin{frame}{Disponibilização}
 
-\begin{minipage}[b]{0.1\linewidth}
-\begin{center}	
-\includegraphics[scale=0.07]{./images/github_icon}
-	\end{center}
-\end{minipage} % Final de fig1 e inicio de fig2
-\begin{minipage}[b]{0.1\linewidth}
-\href{https://github.com/JrEduardo/iguiR}{\texttt{https://github.com/JrEduardo/iguiR}}\\
-\end{minipage}
+  \begin{minipage}[c]{0.1\linewidth}
+    \begin{center}	
+      \includegraphics[scale=0.07]{./images/github_icon}
+    \end{center}
+  \end{minipage}
+  \hfill % Final de fig1 e inicio de fig2
+  \begin{minipage}[c]{0.85\linewidth}
+    % \href{https://github.com/JrEduardo/iguiR}{\texttt{https://github.com/JrEduardo/iguiR}}
+    \texttt{\url{https://github.com/JrEduardo/iguiR}} (sujeito a atualização)\\
+    \texttt{\url{http://www.leg.ufpr.br/iguiR}} (zip da versão de hoje)
+  \end{minipage}
 
-\vspace{0.3cm}
-{\tt \textcolor{mycolor2}{I}nteractive \textcolor{mycolor2}{G}raphical \textcolor{mycolor2}{U}ser \textcolor{mycolor2}{I}nterface in \textcolor{mycolor2}{R} - }\href{https://github.com/JrEduardo/iguiR}{\texttt{iguiR}}\\
-
+  \vspace{0.3cm}
+  {\tt
+    \textcolor{mycolor2}{I}nteractive
+    \textcolor{mycolor2}{G}raphical
+    \textcolor{mycolor2}{U}ser
+    \textcolor{mycolor2}{I}nterface in
+    \textcolor{mycolor2}{R} -
+  }\href{https://github.com/JrEduardo/iguiR}{\texttt{iguiR}}\\
+  
 \end{frame}
+
+%\end{comment}
+
+%%=============================================================================
+
+\input{introducao.tex}
 
 \begin{frame}{Conteúdo}
   \begin{multicols}{2}
@@ -239,9 +256,6 @@
   \end{multicols}
 \end{frame}
 
-%%=============================================================================
-
-\input{introducao.tex}
 \input{animation.tex}
 \input{rgl.tex}
 \input{googleVis.tex}
