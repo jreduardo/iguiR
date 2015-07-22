@@ -29,4 +29,4 @@ print(graf)
 
 plot(graf)
 
-cat(graf$html$chart, file="graf.html")
+cat(graf$html$header, graf$html$chart, file="graf.html")
